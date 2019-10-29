@@ -31,8 +31,7 @@ class App extends Component {
           />
           <Route
             path={'/places'}
-            component={PlacesList}
-            store={STORE}
+            render={() => <PlacesList store={STORE}/>}
           />
         </main>
       </div>

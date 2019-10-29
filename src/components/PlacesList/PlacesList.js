@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import Place from '../Place/Place'
-// import STORE from '../../STORE'
 
-class PlacesList extends Component {
+class PlacesList extends Component {    
     render() {
         console.log(this.props)
         
@@ -21,6 +20,7 @@ class PlacesList extends Component {
 
         return (
             {places}
+            // <h1>test</h1>
         );
     }
 }
