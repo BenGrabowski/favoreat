@@ -15,10 +15,10 @@ class Header extends Component {
                 </Link>
                 <div className='register-login'>
                 <Link to='/register'>
-                    <span>Register</span>
+                    <span id="register">Register</span>
                 </Link>
                 <Link to='/login'>
-                    <span>Login</span>
+                    <span id="login">Login</span>
                 </Link>
                 </div>
             </nav>

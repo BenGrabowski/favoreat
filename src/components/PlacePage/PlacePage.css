@@ -1,16 +1,11 @@
-.landing_sections {
+#place-page {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.info {
-    padding: 10px;
-}
-
-#demo-button {
+.go-back {
     border: 3px solid white;
     padding: 5px;
     background: black;
 }
-

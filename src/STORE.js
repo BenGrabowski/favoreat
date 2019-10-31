@@ -6,7 +6,7 @@ const STORE = [
         hh: true,
         notes: 'Praesent sagittis a mi sit amet dictum. Donec orci nibh, dignissim in leo et, congue semper mauris.',
         items: [
-            'New Saigon',
+            'Street Tacos',
             'Cheese curds & Shishito Peppers',
             'Bao Bun'
         ]
@@ -21,7 +21,7 @@ const STORE = [
     },
     {
         id: 3,
-        name: 'Bibsbys Folley',
+        name: 'Bigsbys Folley',
         type: 'Winery',
         hh: true,
         notes: undefined,

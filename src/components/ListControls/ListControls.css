@@ -1,0 +1,12 @@
+#list-controls {
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    font-weight: bold;
+}
+
+#type-control, #happy-hour-control {
+    padding: 10px;
+}

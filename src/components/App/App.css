@@ -1,31 +1,42 @@
 * {
     box-sizing: border-box;
   }
+
+  html {
+    height: 100%;
+  }
+
+  #root {
+    height: 100%;
+  }
+
+  .App {
+    background: url(../../images/favoreat-background-3.jpg) no-repeat center center fixed;
+    height: 100%;
+  }
   
   body {
     font-family: "Open Sans",
     sans-serif; 
     font-size: 20px;
-    color: #444;
-    text-align: center;
+    color: white;
     line-height: 1.5;
+    /* height: 100%; */
   }
   
   nav,
   footer {
     padding: 1% 0;
-    background-color: #aaa;
+    /* background-color: #aaa; */
   }
   
   nav {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     z-index: 10;
   }
-  
-  
   
   header {
     padding: 6% 0;
@@ -33,11 +44,7 @@
   
   section {
     min-height: 200px;
-    padding: 6% 0;
-    background-color: #bbb;
   }
   
-  section:nth-child(even) {
-    background-color: #ddd;
-  }
+
   

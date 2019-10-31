@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import './LandingPage.css'
 
 class LandingPage extends Component {
     render() {
         return (
             <div className='landing_sections'>
-                <section>
+                <section className="info">
                     <h3>Keep track of all your go-to happy hours, dinner spots, bars &amp; more</h3>
                     <p>
                         Enter the places you normally like to go to start, then add more as you find them.
@@ -13,12 +14,16 @@ class LandingPage extends Component {
                         for the perfect place!
                     </p>
                 </section>
+                
+                <section className="info">
                     <h3>Select the perfect spot for any occasion</h3>
                     <p>
                         You can filter your saved places by establishment type. Just looking to grab a drink?
                         Filter your listed by "bar". 
                     </p>
-                <section>
+                </section>    
+                    
+                <section className="info">
                     <h3>Keep track of previous orders</h3>
                     <p>
                         Do you remember having a fantastic cocktail the last time you were here, but can't
@@ -26,6 +31,11 @@ class LandingPage extends Component {
                         bar or restauant.
                     </p>
                 </section>
+                
+                <Link to='/places' id="demo-button">
+                    Try it now!
+                </Link>
+
             </div>
         );
     }

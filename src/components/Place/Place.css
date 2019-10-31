@@ -1,0 +1,36 @@
+.place-name {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+}
+
+.place-type {
+    font-size: 18px;
+    font-style: italic;
+}
+
+#items-ordered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    border: 4px solid white;
+    margin: 10px;
+    background: rgba(0,0,0,.9);
+    padding: 15px 0;
+}
+
+#notes {
+    width: 80%;
+}
+
+button {
+    color: black;
+    width: 100px;
+}

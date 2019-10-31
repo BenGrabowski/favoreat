@@ -1,27 +1,41 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import './Place.css'
 
 class Place extends Component {
     render() {
         const happyHour = this.props.hh
-            ? <span>Yes</span>
-            : <span>No</span>
+            ? <span>Happy Hour: Yes</span>
+            : <span>Happy Hour: No</span>
 
-        const items = this.props.items.map(item => {
-            return <li>item</li>
+        const notes = this.props.notes
+            ? <p id="notes"><span>Notes:</span><br />{this.props.notes}</p>
+            : ''
+        
+        const items = (this.props.items)
+        ? this.props.items.map((item, i) => {
+            return <li key={i}>{item}</li>
         })
+        : <li>No items yet</li>
         
         return (
             <section>
-                <h2>{this.props.name}</h2>
+                <Link 
+                    to={`place/${this.props.id}`}
+                    className="place-name"
+                >
+                    {this.props.name}
+                </Link>
+
+                {/* <h2>{this.props.name}</h2> */}
                 
-                <h3 class="place-type">{this.props.type}</h3>
+                <h3 className="place-type">{this.props.type}</h3>
                 
                 <p>{happyHour}</p>
                 
-                <p><span>Notes:</span>
-                <br />
-                    {this.props.notes}
-                </p>
+                <div id="notes">
+                    {notes}
+                </div>
 
                 <div id="items-ordered">
                     <p id="items-title"><span>Items Ordered</span></p>

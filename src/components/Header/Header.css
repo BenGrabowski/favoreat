@@ -1,9 +1,24 @@
+* {
+    color: white;
+}
+
 .Header {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    background: black;
+    border-bottom: 5px solid white;
 }
 
 .justify-start {
     margin-right: auto;
+    margin-left: 10px;
+}
+
+#register, #login {
+    padding: 5px;
+}
+
+a {
+    text-decoration: none;
 }

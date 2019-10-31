@@ -7,6 +7,9 @@ import './App.css';
 import LoginForm from '../LoginForm/LoginForm';
 import STORE from '../../STORE';
 import PlacesList from '../PlacesList/PlacesList';
+import Place from '../Place/Place';
+import AddPlace from '../AddPlace/AddPlace';
+import PlacePage from '../PlacePage/PlacePage';
 
 class App extends Component {
   render() {
@@ -32,6 +35,19 @@ class App extends Component {
           <Route
             path={'/places'}
             render={() => <PlacesList store={STORE}/>}
+          />
+          <Route 
+            path={'/place/:id'}
+            component={PlacePage}
+            // render={({ history }) => {
+            //   return <PlacePage
+            //     store={STORE}
+            //   />
+            // }}
+          />
+          <Route
+            path={'/add-place'}
+            component={AddPlace}
           />
         </main>
       </div>
