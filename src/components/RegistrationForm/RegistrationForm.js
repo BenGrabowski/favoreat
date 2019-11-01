@@ -4,7 +4,7 @@ import './RegistrationForm.css'
 class RegistrationForm extends Component {
     render() {
         return (
-            <section>
+            <section id="registration">
                 <h3>Start adding your FavorEats now!</h3>
                 <form className='signup-form'>
                     <div>

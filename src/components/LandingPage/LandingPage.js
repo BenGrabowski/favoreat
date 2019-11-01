@@ -31,10 +31,6 @@ class LandingPage extends Component {
                         bar or restauant.
                     </p>
                 </section>
-                
-                <Link to='/places' id="demo-button">
-                    Try it now!
-                </Link>
 
             </div>
         );

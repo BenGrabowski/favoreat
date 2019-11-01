@@ -11,7 +11,7 @@
   }
 
   .App {
-    background: url(../../images/favoreat-background-3.jpg) no-repeat center center fixed;
+    /* background: url(../../images/favoreat-background-3.jpg) no-repeat center center fixed; */
     height: 100%;
   }
   
@@ -21,6 +21,9 @@
     font-size: 20px;
     color: white;
     line-height: 1.5;
+    background: url(../../images/favoreat-background-4.jpg) no-repeat center center fixed;
+    background-size: cover;
+
     /* height: 100%; */
   }
   
@@ -41,10 +44,15 @@
   header {
     padding: 6% 0;
   }
+
+  label {
+    color: white;
+    margin-right: 5px;
+}
   
-  section {
+  /* section {
     min-height: 200px;
-  }
+  } */
   
 
   

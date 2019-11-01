@@ -4,7 +4,7 @@ import './LoginForm.css'
 class LoginForm extends Component {
     render() {
         return (
-            <section>
+            <section id="login">
                 <form className='login-form'>
                     <div>
                         <label htmlFor="username">Email</label>

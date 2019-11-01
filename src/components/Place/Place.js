@@ -16,7 +16,8 @@ class Place extends Component {
         ? this.props.items.map((item, i) => {
             return <li key={i}>{item}</li>
         })
-        : <li>No items yet</li>
+        // : <li>No items yet</li>
+        : ''
         
         return (
             <section>

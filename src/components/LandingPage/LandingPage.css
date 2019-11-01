@@ -2,15 +2,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 30px;
 }
 
 .info {
     padding: 10px;
-}
-
-#demo-button {
-    border: 3px solid white;
-    padding: 5px;
-    background: black;
 }
 

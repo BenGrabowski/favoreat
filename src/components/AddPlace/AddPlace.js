@@ -7,7 +7,7 @@ class AddPlace extends Component {
         return (
             <>
             <header role="header">
-                <h2>Add a New Place</h2>
+                <h2 id="add-place-title">Add a New Place</h2>
             </header>
             
             <section>
@@ -42,7 +42,7 @@ class AddPlace extends Component {
                     <br />
                     <button>Save</button>
                 </form>
-                <Link to='/places'>Go Back</Link>
+                <Link to='/places' className="go-back">Go Back</Link>
             </section>
             </>
         );

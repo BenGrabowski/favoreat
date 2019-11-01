@@ -20,6 +20,9 @@ class Header extends Component {
                 <Link to='/login'>
                     <span id="login">Login</span>
                 </Link>
+                <Link to='/places' id="demo-button">
+                    Demo
+                </Link>
                 </div>
             </nav>
             </>

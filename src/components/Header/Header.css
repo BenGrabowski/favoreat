@@ -22,3 +22,9 @@
 a {
     text-decoration: none;
 }
+
+#demo-button {
+    border: 3px solid white;
+    padding: 5px;
+    background: black;
+}
