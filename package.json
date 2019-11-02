@@ -1,6 +1,6 @@
 {
   "name": "favoreat",
-  "homepage": "https://bengrabowski.github.io/favoreat/",
+  // "homepage": "https://bengrabowski.github.io/favoreat/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
