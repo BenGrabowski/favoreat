@@ -3,7 +3,11 @@ const STORE = [
         id: 1,
         name: 'Linger',
         type: 'Restaurant',
-        hh: true,
+        hh: {
+            has: true,
+            start: '4:00 PM',
+            end: '7:00 PM'
+        },
         notes: 'Praesent sagittis a mi sit amet dictum. Donec orci nibh, dignissim in leo et, congue semper mauris.',
         items: [
             'Street Tacos',
@@ -15,7 +19,11 @@ const STORE = [
         id: 2,
         name: 'Barcelona Wine Bar',
         type: 'Restaurant',
-        hh: true,
+        hh: {
+            has: true,
+            start: '3:00 PM',
+            end: '6:00 PM'
+        },
         notes: undefined,
         items: undefined
     },
@@ -23,7 +31,11 @@ const STORE = [
         id: 3,
         name: 'Bigsbys Folley',
         type: 'Winery',
-        hh: true,
+        hh: {
+            has: true,
+            start: '5:00 PM',
+            end: '7:30 PM'
+        },
         notes: undefined,
         items: undefined
     },

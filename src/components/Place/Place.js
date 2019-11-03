@@ -5,7 +5,10 @@ import './Place.css'
 class Place extends Component {
     render() {
         const happyHour = this.props.hh
-            ? <span>Happy Hour: Yes</span>
+            ? <div>
+                <p>Happy Hour: Yes</p>
+                <p>{`${this.props.hh.start} - ${this.props.hh.end}`}</p>
+            </div>
             : <span>Happy Hour: No</span>
 
         const notes = this.props.notes
@@ -27,8 +30,6 @@ class Place extends Component {
                 >
                     {this.props.name}
                 </Link>
-
-                {/* <h2>{this.props.name}</h2> */}
                 
                 <h3 className="place-type">{this.props.type}</h3>
                 
