@@ -1,17 +1,20 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import './AddPlace.css'
+import './AddPlace.scss'
+// import {MDCRipple} from '@material/ripple';
+
+// const buttonRipple = new MDCRipple(document.querySelector('.mdc-button'));
 
 class AddPlace extends Component {
     render() {
         return (
             <>
-            <header role="header">
+            <header>
                 <h2 id="add-place-title">Add a New Place</h2>
             </header>
             
-            <section>
-                <form id="add-place">
+            <section id="add-place">
+                <form id="add-place-form">
                     <label htmlFor="place-name">Name:</label>
                     <input type="text" name="place-name" id="place-name" required />
                     <br />
@@ -22,14 +25,16 @@ class AddPlace extends Component {
                         <option value="brewery">Brewery</option>
                         <option value="winery">Winery</option>
                     </select>
-                    
+
                     <div id="happy-hour-container">
-                        <p id="happy-hour-title">Happy Hour:</p>
-                        <label htmlFor="happy-hour">Yes</label>
-                        <input type="radio" name="happy-hour" value="yes" />
+                        <label htmlFor="happy-hour">Happy Hour</label>
+                        <input type="checkbox" name="happy-hour" />
                         <br />
-                        <label htmlFor="happy-hour">No</label>
-                        <input type="radio" name="happy-hour" value="no" />
+                        <label htmlFor="hh-start">Starts</label>
+                        <input type="time" name="hh-start" />
+                        <br />
+                        <label htmlFor="hh-end">Ends</label>
+                        <input type="time" name="hh-end" />
                     </div>
                     
                     <div id="notes">
@@ -38,11 +43,15 @@ class AddPlace extends Component {
                         <textarea name="place-notes" id="place-notes" rows="10"></textarea>
                     </div>
     
-                    <button>Add Menu Item</button>
+                    <button className="mdc">Add Menu Item</button>
                     <br />
                     <button>Save</button>
                 </form>
-                <Link to='/places' className="go-back">Go Back</Link>
+                <Link 
+                    to='/places' 
+                    className="go-back mdc-button">
+                    Go Back
+                </Link>
             </section>
             </>
         );

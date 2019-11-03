@@ -6,17 +6,17 @@ import './PlacePage.css'
 
 class PlacePage extends Component {
     render() {
-        const place = STORE[0]
+        // const place = STORE[0]
         
         return (
             <div id="place-page">
                 <Place
-                id={STORE[0].id}
-                name={STORE[0].name}
-                hh={STORE[0].hh}
-                type={STORE[0].type}
-                notes={STORE[0].notes}
-                items={STORE[0].items}
+                    id={STORE[0].id}
+                    name={STORE[0].name}
+                    hh={STORE[0].hh}
+                    type={STORE[0].type}
+                    notes={STORE[0].notes}
+                    items={STORE[0].items}
                 />
                 <Link 
                     to='/places'

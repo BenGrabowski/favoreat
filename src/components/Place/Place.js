@@ -20,7 +20,7 @@ class Place extends Component {
         : ''
         
         return (
-            <section>
+            <section className="place-section">
                 <Link 
                     to={`place/${this.props.id}`}
                     className="place-name"

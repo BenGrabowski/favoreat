@@ -8,6 +8,7 @@
     align-items: center;
     background: black;
     border-bottom: 5px solid white;
+    height: 100px;
 }
 
 .justify-start {
@@ -17,6 +18,7 @@
 
 #register, #login {
     padding: 5px;
+    font-family: 'Fauna One', serif;
 }
 
 a {
@@ -24,7 +26,15 @@ a {
 }
 
 #demo-button {
-    border: 3px solid white;
+    border: 1px solid white;
     padding: 5px;
     background: black;
+    font-family: 'Fauna One', serif;
+    margin-right: 5px;    
 }
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin: 0;
+  }

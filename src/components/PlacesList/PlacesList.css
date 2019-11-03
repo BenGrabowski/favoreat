@@ -2,10 +2,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: 'Fauna One', serif;
 }
 
 .add-place {
     border: 3px solid white;
     padding: 5px;
     background: black;
+}
+
+.place-section {
+    margin: 10px;
 }

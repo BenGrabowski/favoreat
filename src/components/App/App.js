@@ -7,9 +7,9 @@ import './App.css';
 import LoginForm from '../LoginForm/LoginForm';
 import STORE from '../../STORE';
 import PlacesList from '../PlacesList/PlacesList';
-import Place from '../Place/Place';
 import AddPlace from '../AddPlace/AddPlace';
 import PlacePage from '../PlacePage/PlacePage';
+import '../../index.css';
 
 class App extends Component {
   render() {

@@ -1,0 +1,20 @@
+.App_main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#place-notes {
+    min-width: 200px;
+}
+
+#add-place {
+    width: 50%;
+    font-family: 'Fauna One', serif;
+}
+
+#add-place-title {
+    font-family: 'Fauna One', serif;
+}
+
+

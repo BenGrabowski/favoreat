@@ -2,7 +2,7 @@
     box-sizing: border-box;
   }
 
-  html {
+  /* html {
     height: 100%;
   }
 
@@ -11,9 +11,8 @@
   }
 
   .App {
-    /* background: url(../../images/favoreat-background-3.jpg) no-repeat center center fixed; */
     height: 100%;
-  }
+  } */
   
   body {
     font-family: "Open Sans",
@@ -23,14 +22,11 @@
     line-height: 1.5;
     background: url(../../images/favoreat-background-4.jpg) no-repeat center center fixed;
     background-size: cover;
-
-    /* height: 100%; */
   }
   
   nav,
   footer {
     padding: 1% 0;
-    /* background-color: #aaa; */
   }
   
   nav {
@@ -48,11 +44,8 @@
   label {
     color: white;
     margin-right: 5px;
-}
-  
-  /* section {
-    min-height: 200px;
-  } */
-  
+}  
 
-  
+input, textarea {
+  color: black;
+}
