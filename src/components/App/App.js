@@ -11,6 +11,7 @@ import PlacesListPage from '../../routes/PlacesListPage'
 import AddPlace from '../AddPlace/AddPlace';
 import PlacePage from '../PlacePage/PlacePage';
 // import PlacesContext from '../../PlacesContext';
+import PlacesListProvider from '../../PlacesContext'
 import '../../index.css';
 
 class App extends Component {
@@ -23,17 +24,8 @@ class App extends Component {
   }
   
   render() {
-  //   const contextValue = {
-  //     places: this.state.places,
-  //     selectedPlace: this.state.selectedPlace,
-  //     setPlaces: this.setPlaces,
-  //     updatePlace: this.updatePlace,
-  //     setError: this.setError,
-  //     clearError: this.clearError,
-  //   }
-    
     return (
-      // <PlacesContext.Provider value={contextValue}>
+      <PlacesListProvider>
         <div className='App'>
         <header className='App_header'>
           <Header />
@@ -68,7 +60,7 @@ class App extends Component {
           </Switch>
         </main>
       </div>
-      // </PlacesContext.Provider>
+      </PlacesListProvider>
     );
   }
 }

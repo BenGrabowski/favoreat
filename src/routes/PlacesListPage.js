@@ -34,12 +34,16 @@ export default class PlacesListPage extends Component {
     render() {
         const { error } = this.context
         return (
-            <section>
-                <ListControls />
-                {error
-                    ? <p className='red'>There was an error, try again</p>
-                    : this.renderPlaces()}
-            </section>
+            <PlacesContext.Consumer>
+                {(context) => {
+                    return (<section>
+                        <ListControls />
+                        {error
+                            ? <p className='red'>There was an error, try again</p>
+                            : this.renderPlaces()}
+                    </section>)
+                }}
+            </PlacesContext.Consumer>
         )
     }
 }
