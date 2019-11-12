@@ -41,3 +41,8 @@ h1 {
     font-size: 36px;
     margin: 0;
   }
+
+  .register-login {
+      display: flex;
+      align-items: center;
+  }
