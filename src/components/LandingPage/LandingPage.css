@@ -1,13 +1,52 @@
 .landing_sections {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     margin-top: 30px;
-    font-family: 'Fauna One', serif;
+    /* font-family: 'Fauna One', serif; */
+    font-family: 'Open Sans', sans-serif;
 }
 
 .info {
     padding: 10px;
     margin: 10px;
+    height: 425px;
+}
+
+.info > h3 {
+    text-align: center;
+}
+
+.info > p {
+    font-size: 18px;
+}
+
+.tagline {
+    /* font-family: 'Playfair Display', serif; */
+    font-family: 'Oleo Script', cursive;
+    font-size: 50px;
+    margin-bottom: 0px;
+}
+
+.sub-tagline {
+    /* font-family: 'Playfair Display', serif; */
+    font-family: 'Oleo Script', cursive;
+    font-size: 30px;
+    margin-top: 0px;
+}
+
+.landing-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0px;
+}
+
+@media screen and (max-width: 800px) {
+    .landing_sections {
+        display: flex;
+        flex-direction: column;
+    }
 }
 

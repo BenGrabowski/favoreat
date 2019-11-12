@@ -7,7 +7,7 @@
     justify-content: flex-end;
     align-items: center;
     background: black;
-    border-bottom: 5px solid white;
+    /* border-bottom: 5px solid white; */
     height: 100px;
 }
 
@@ -18,7 +18,8 @@
 
 #register, #login {
     padding: 5px;
-    font-family: 'Fauna One', serif;
+    /* font-family: 'Fauna One', serif; */
+    font-family: 'Open Sans', sans-serif;
 }
 
 a {
@@ -29,12 +30,14 @@ a {
     border: 1px solid white;
     padding: 5px;
     background: black;
-    font-family: 'Fauna One', serif;
+    /* font-family: 'Fauna One', serif; */
+    font-family: 'Open Sans', sans-serif;
     margin-right: 5px;    
 }
 
 h1 {
-    font-family: 'Playfair Display', serif;
+    /* font-family: 'Playfair Display', serif; */
+    font-family: 'Oleo Script', cursive;
     font-size: 36px;
     margin: 0;
   }

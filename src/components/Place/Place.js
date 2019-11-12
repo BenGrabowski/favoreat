@@ -6,8 +6,8 @@ class Place extends Component {
     render() {
         const happyHour = this.props.hh
             ? <div>
-                <p>Happy Hour: Yes</p>
-                <p>{`${this.props.hh.start} - ${this.props.hh.end}`}</p>
+                <p className="hh">Happy Hour: Yes</p>
+                <p className="hh">{`${this.props.hh.start} - ${this.props.hh.end}`}</p>
             </div>
             : <span>Happy Hour: No</span>
 
@@ -19,7 +19,6 @@ class Place extends Component {
         ? this.props.items.map((item, i) => {
             return <li key={i}>{item}</li>
         })
-        // : <li>No items yet</li>
         : ''
         
         return (
@@ -33,7 +32,7 @@ class Place extends Component {
                 
                 <h3 className="place-type">{this.props.type}</h3>
                 
-                <p>{happyHour}</p>
+                <div id="hh-box">{happyHour}</div>
                 
                 <div id="notes">
                     {notes}

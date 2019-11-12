@@ -4,6 +4,13 @@ import './LandingPage.css'
 class LandingPage extends Component {
     render() {
         return (
+            <>
+            
+            <header className="landing-header">
+                <h2 className="tagline">All Your Favorite Places</h2>
+                <p className="sub-tagline">All in One Spot</p>
+            </header>
+
             <div className='landing_sections'>
                 <section className="info">
                     <h3>Keep track of all your go-to happy hours, dinner spots, bars &amp; more</h3>
@@ -30,8 +37,8 @@ class LandingPage extends Component {
                         bar or restauant.
                     </p>
                 </section>
-
             </div>
+            </>
         );
     }
 }

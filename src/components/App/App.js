@@ -1,24 +1,45 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Header from '../Header/Header';
 import LandingPage from '../LandingPage/LandingPage';
 import RegistrationForm from '../RegistrationForm/RegistrationForm';
 import './App.css';
-import LoginForm from '../LoginForm/LoginForm';
-import STORE from '../../STORE';
-import PlacesList from '../PlacesList/PlacesList';
+import LoginPage from '../../routes/LoginPage';
+// import STORE from '../../STORE';
+// import PlacesList from '../PlacesList/PlacesList';
+import PlacesListPage from '../../routes/PlacesListPage'
 import AddPlace from '../AddPlace/AddPlace';
 import PlacePage from '../PlacePage/PlacePage';
+// import PlacesContext from '../../PlacesContext';
 import '../../index.css';
 
 class App extends Component {
+  
+  state = { hasError: false }
+
+  static getDerivedStateFromError(error) {
+    console.error(error)
+    return { hasError: true }
+  }
+  
   render() {
+  //   const contextValue = {
+  //     places: this.state.places,
+  //     selectedPlace: this.state.selectedPlace,
+  //     setPlaces: this.setPlaces,
+  //     updatePlace: this.updatePlace,
+  //     setError: this.setError,
+  //     clearError: this.clearError,
+  //   }
+    
     return (
-      <div className='App'>
+      // <PlacesContext.Provider value={contextValue}>
+        <div className='App'>
         <header className='App_header'>
           <Header />
         </header>
         <main className='App_main'>
+          <Switch>
           <Route
             exact
             path={'/'}
@@ -30,27 +51,24 @@ class App extends Component {
           />
           <Route
             path={'/login'}
-            component={LoginForm}
+            component={LoginPage}
           />
           <Route
             path={'/places'}
-            render={() => <PlacesList store={STORE}/>}
+            render={PlacesListPage}
           />
           <Route 
             path={'/place/:id'}
             component={PlacePage}
-            // render={({ history }) => {
-            //   return <PlacePage
-            //     store={STORE}
-            //   />
-            // }}
           />
           <Route
             path={'/add-place'}
             component={AddPlace}
           />
+          </Switch>
         </main>
       </div>
+      // </PlacesContext.Provider>
     );
   }
 }

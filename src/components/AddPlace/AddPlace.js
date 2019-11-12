@@ -9,7 +9,7 @@ class AddPlace extends Component {
     render() {
         return (
             <>
-            <header>
+            <header id="add-place-header">
                 <h2 id="add-place-title">Add a New Place</h2>
             </header>
             

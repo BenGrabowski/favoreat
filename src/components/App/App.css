@@ -1,18 +1,6 @@
 * {
     box-sizing: border-box;
   }
-
-  /* html {
-    height: 100%;
-  }
-
-  #root {
-    height: 100%;
-  }
-
-  .App {
-    height: 100%;
-  } */
   
   body {
     font-family: "Open Sans",
@@ -20,8 +8,12 @@
     font-size: 20px;
     color: white;
     line-height: 1.5;
-    background: url(../../images/favoreat-background-4.jpg) no-repeat center center fixed;
+    background: url(../../images/favoreat-background-5.jpg) no-repeat center center fixed;
     background-size: cover;
+  }
+
+  .App_main {
+    margin-top: 12%;
   }
   
   nav,
@@ -35,10 +27,6 @@
     left: 0;
     right: 0;
     z-index: 10;
-  }
-  
-  header {
-    padding: 6% 0;
   }
 
   label {

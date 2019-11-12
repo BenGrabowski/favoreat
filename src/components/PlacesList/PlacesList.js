@@ -3,11 +3,17 @@ import { Link } from 'react-router-dom'
 import Place from '../Place/Place'
 import ListControls from '../ListControls/ListControls'
 import './PlacesList.css'
+import PlacesApiService from '../../services/places-api-service'
 
 class PlacesList extends Component {    
-    render() {
-        console.log(this.props.store)
-        
+    
+    componentDidMount() {
+        PlacesApiService.getPlaces()
+            .then(this.context.setPlaces)
+            .catch(this.context.setError)
+    }
+    
+    render() {    
         const places = this.props.store.map((place, i) => {    
             return <Place 
                     key={i}
