@@ -6,6 +6,7 @@ import TokenService from '../../services/token-service';
 class Header extends Component {
     handleLogoutClick = () => {
         TokenService.clearAuthToken()
+        this.renderLoginLink()
     }
 
     renderLogoutLink() {
@@ -13,8 +14,7 @@ class Header extends Component {
             <div className='logged-in'>
                 <Link
                     onClick={this.handleLogoutClick}
-                    to={'/'}
-                >
+                    to={'/'}>
                     Log Out    
                 </Link>
             </div>
@@ -25,13 +25,11 @@ class Header extends Component {
         return (
             <div className='not-logged-in'>
                 <Link
-                    to='/login'
-                >
+                    to='/login'>
                     Login
                 </Link>
                 <Link
-                    to='/register'
-                >
+                    to='/register'>
                     Register
                 </Link>
             </div>
@@ -39,8 +37,7 @@ class Header extends Component {
     }
     
     render() {
-        return (
-            <>
+        return <>
             <nav className='Header'>
                 <Link 
                     to='/'
@@ -49,12 +46,6 @@ class Header extends Component {
                     <h1>FavorEat</h1>                
                 </Link>
                 <div className='register-login'>
-                    {/* <Link to='/register'>
-                        <span id="register">Register</span>
-                    </Link>
-                    <Link to='/login'>
-                        <span id="login">Login</span>
-                    </Link> */}
                     {TokenService.hasAuthToken()
                         ? this.renderLogoutLink()
                         : this.renderLoginLink()
@@ -64,8 +55,7 @@ class Header extends Component {
                     </Link>
                 </div>
             </nav>
-            </>
-        );
+        </>
     }
 }
 
