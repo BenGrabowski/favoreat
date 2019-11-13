@@ -5,9 +5,9 @@ const PlacesApiService = {
     getPlaces(user_id) {
         return fetch(`${config.API_ENDPOINT}/places`, {
             headers: {
-                'Authorization': `bearer ${TokenService.getAuthToken()}`
+                'Authorization': `bearer ${TokenService.getAuthToken()}`,
+                'user_id': user_id,
             },
-            body: JSON.stringify(user_id),
         })
         .then(res =>
             (!res.ok)
@@ -18,9 +18,9 @@ const PlacesApiService = {
     getPlace(placeId, user_id) {
         return fetch(`${config.API_ENDPOINT}/places/${placeId}`, {
             headers: {
-                'Authorization': `bearer ${TokenService.getAuthToken()}`
+                'Authorization': `bearer ${TokenService.getAuthToken()}`,
+                'user_id': user_id,
             },
-            body: JSON.stringify(user_id)
         })
         .then(res =>
             (!res.ok)
