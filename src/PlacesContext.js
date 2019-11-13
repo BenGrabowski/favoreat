@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 
 const PlacesContext = React.createContext({
+    user_id: undefined,
     places: [],
     error: null,
     selectedPlace: undefined,
@@ -13,11 +14,16 @@ export default PlacesContext
 
 export class PlacesListProvider extends Component {
     state = {
+        user_id: undefined,
         places: [],
         selectedPlace: undefined,
         error: null,
     }
 
+    setUserId = id => {
+        this.setState({ user_id: id })
+    }
+    
     setPlaces = places => {
         this.setState({ places })
     }
@@ -35,8 +41,10 @@ export class PlacesListProvider extends Component {
     
     render() {
         const contextValue = {
+            user_id: this.state.user_id,
             places: this.state.places,
             selectedPlace: this.state.selectedPlace,
+            setUserId: this.setUserId,
             setPlaces: this.setPlaces,
             updatePlace: this.updatePlace,
             setError: this.setError,

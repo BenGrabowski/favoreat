@@ -9,7 +9,7 @@ export default class PlacesListPage extends Component {
 
     componentDidMount() {
         this.context.clearError()
-        PlacesApiService.getPlaces()
+        PlacesApiService.getPlaces(this.context.user_id)
             .then(this.context.setPlaces)
             .catch(this.context.setError)
     }

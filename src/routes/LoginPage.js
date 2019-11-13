@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import LoginForm from '../components/LoginForm/LoginForm'
+import PlacesContext from '../PlacesContext'
 
 export default class LoginPage extends Component {
   static defaultProps = {
@@ -9,7 +10,10 @@ export default class LoginPage extends Component {
     },
   }
 
-  handleLoginSuccess = () => {
+  static contextType = PlacesContext
+
+  handleLoginSuccess = user_id => {
+    this.context.setUserId(user_id)
     const { location, history } = this.props
     const destination = (location.state || {}).from || '/places'
     history.push(destination)

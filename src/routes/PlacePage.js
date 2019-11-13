@@ -11,6 +11,7 @@ class PlacePage extends Component {
                     return <div id="place-page">
                         <Place
                             id={context.selectedPlace.id}
+                            user_id={context.selectedPlace.user_id}
                             name={context.selectedPlace.name}
                             hh={context.selectedPlace.hh}
                             hh_start={context.selectedPlace.hh_start}

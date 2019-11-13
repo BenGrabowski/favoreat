@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import TokenService from '../../services/token-service'
 import AuthApiService from '../../services/auth-api-service'
+import PlacesContext from '../../PlacesContext'
 import './LoginForm.css'
 
 class LoginForm extends Component {
@@ -8,8 +9,9 @@ class LoginForm extends Component {
         onLoginSuccess: () => {}
     }
 
-    state = { error: null }
-
+    // state = { error: null }
+    static contextType = PlacesContext
+    
     handleSubmitJwtAuth = event => {
         event.preventDefault()
         this.setState({ error: null })
@@ -25,7 +27,9 @@ class LoginForm extends Component {
                 TokenService.saveAuthToken(res.authToken)
                 console.log(res.authToken)
                 console.log(res.user_id)
-                this.props.onLoginSuccess()
+                console.log(res)
+                // this.context.setUserId(res.user_id)
+                this.props.onLoginSuccess(res.user_id)
             })
             .catch(res => {
                 this.setState({ error: res.error })
