@@ -45,15 +45,15 @@ class Header extends Component {
                 >
                     <h1>FavorEat</h1>                
                 </Link>
-                <div className='register-login'>
+                {/* <div className='register-login'> */}
                     {TokenService.hasAuthToken()
                         ? this.renderLogoutLink()
                         : this.renderLoginLink()
                     }
-                    <Link to='/places' id="demo-button">
-                        Demo
-                    </Link>
-                </div>
+                {/* </div> */}
+                <Link to='/places' id="demo-button">
+                    Demo
+                </Link>
             </nav>
         </>
     }
