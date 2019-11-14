@@ -17,6 +17,7 @@ export default class LoginPage extends Component {
     const { location, history } = this.props
     const destination = (location.state || {}).from || '/places'
     history.push(destination)
+    this.context.setLoggedIn()
   }
 
   render() {

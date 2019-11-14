@@ -2,11 +2,19 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import './Header.css'
 import TokenService from '../../services/token-service';
+import PlacesContext from '../../PlacesContext';
 
 class Header extends Component {
+    static contextType = PlacesContext
+    
+    state = {
+        loggedIn: this.context.loggedIn
+    }
+    
     handleLogoutClick = () => {
         TokenService.clearAuthToken()
         this.renderLoginLink()
+        this.context.setLoggedOut()
     }
 
     renderLogoutLink() {
@@ -45,12 +53,12 @@ class Header extends Component {
                 >
                     <h1>FavorEat</h1>                
                 </Link>
-                {/* <div className='register-login'> */}
+                <div className='register-login'>
                     {TokenService.hasAuthToken()
                         ? this.renderLogoutLink()
                         : this.renderLoginLink()
                     }
-                {/* </div> */}
+                </div>
                 <Link to='/places' id="demo-button">
                     Demo
                 </Link>

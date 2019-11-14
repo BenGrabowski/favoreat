@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Header from '../Header/Header';
 import LandingPage from '../LandingPage/LandingPage';
-import RegistrationForm from '../RegistrationForm/RegistrationForm';
+import RegistrationPage from '../../routes/RegistrationPage';
 import './App.css';
 import LoginPage from '../../routes/LoginPage';
 import PlacesListPage from '../../routes/PlacesListPage'
@@ -36,7 +36,7 @@ class App extends Component {
           />
           <Route
             path={'/register'}
-            component={RegistrationForm}
+            component={RegistrationPage}
           />
           <Route
             path={'/login'}
