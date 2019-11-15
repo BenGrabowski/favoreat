@@ -4,11 +4,12 @@ const PlacesContext = React.createContext({
     user_id: undefined,
     places: [],
     error: null,
-    selectedPlace: undefined,
+    selectedPlace: {},
     loggedIn: false,
     updatePlace: () => {},
     setPlaces: () => {},
     setError: () => {},
+    setSelectedPlace: () => {},
     setLoggedIn: () => {},
     setLoggedOut: () => {},
     clearError: () => {},
@@ -29,6 +30,10 @@ export class PlacesListProvider extends Component {
     
     setPlaces = places => {
         this.setState({ places })
+    }
+
+    setSelectedPlace = place => {
+        this.setState({ selectedPlace: place })
     }
       
     updatePlace = () => {}
@@ -61,6 +66,7 @@ export class PlacesListProvider extends Component {
             setLoggedOut: this.setLoggedOut,
             updatePlace: this.updatePlace,
             setError: this.setError,
+            setSelectedPlace: this.setSelectedPlace,
             clearError: this.clearError,
         }
 

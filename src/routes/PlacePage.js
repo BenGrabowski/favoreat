@@ -2,23 +2,42 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import PlacesContext from '../PlacesContext'
 import Place from '../components/Place/Place'
+import PlacesApiService from '../services/places-api-service'
 
 class PlacePage extends Component {
+    static contextType = PlacesContext
+    
+    componentDidMount() {
+        this.context.clearError()
+        PlacesApiService.getPlace(
+            this.context.selectedPlace.id,
+            this.context.user_id
+        )
+            .then(place => this.context.setSelectedPlace(place))
+            .catch(this.context.setError)
+    }
+    
     render() {
+        // const place = this.context.selectedPlace
+
         return (
             <PlacesContext.Consumer>
                 {(context) => {
-                    return <div id="place-page">
+                    const place = context.places.filter(place => place.id === context.selectedPlace.id)
+                    console.log(place)
+
+                    return (
+                        <div id="place-page">
                         <Place
-                            id={context.selectedPlace.id}
-                            user_id={context.selectedPlace.user_id}
-                            name={context.selectedPlace.name}
-                            hh={context.selectedPlace.hh}
-                            hh_start={context.selectedPlace.hh_start}
-                            hh_end={context.selectedPlace.hh_end}
-                            type={context.selectedPlace.type}
-                            notes={context.selectedPlace.notes}
-                            items={context.selectedPlace.items}
+                            id={place.id}
+                            user_id={place.user_id}
+                            name={place.name}
+                            hh={place.hh}
+                            hh_start={place.hh_start}
+                            hh_end={place.hh_end}
+                            type={place.type}
+                            notes={place.notes}
+                            items={place.items}
                         />
                         <Link 
                             to='/places'
@@ -27,6 +46,7 @@ class PlacePage extends Component {
                             Go Back
                         </Link>
                     </div>
+                    )
                 }}
             </PlacesContext.Consumer>
         )

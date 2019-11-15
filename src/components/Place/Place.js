@@ -1,9 +1,17 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import './Place.css'
+import PlacesContext from '../../PlacesContext';
 
 class Place extends Component {
-    render() {
+    static contextType = PlacesContext
+
+    handlePlaceClick = () => {
+        this.context.setSelectedPlace(this.props.id)
+        console.log(this.props.id)       
+    }
+    
+    render() {    
         const happyHour = this.props.hh
             ? <div>
                 <p className="hh">Happy Hour: Yes</p>
@@ -26,6 +34,7 @@ class Place extends Component {
                 <Link 
                     to={`place/${this.props.id}`}
                     className="place-name"
+                    onClick={this.handlePlaceClick}
                 >
                     {this.props.name}
                 </Link>
