@@ -32,7 +32,7 @@ class Place extends Component {
         return (
             <section className="place-section">
                 <Link 
-                    to={`place/${this.props.id}`}
+                    to={`places/${this.props.id}`}
                     className="place-name"
                     // onClick={this.handlePlaceClick}
                 >
