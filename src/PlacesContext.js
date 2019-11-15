@@ -4,7 +4,7 @@ const PlacesContext = React.createContext({
     user_id: undefined,
     places: [],
     error: null,
-    selectedPlace: {},
+    selectedPlace: undefined,
     loggedIn: false,
     updatePlace: () => {},
     setPlaces: () => {},

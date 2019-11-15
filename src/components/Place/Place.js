@@ -6,10 +6,10 @@ import PlacesContext from '../../PlacesContext';
 class Place extends Component {
     static contextType = PlacesContext
 
-    handlePlaceClick = () => {
-        this.context.setSelectedPlace(this.props.id)
-        console.log(this.props.id)       
-    }
+    // handlePlaceClick = () => {
+    //     this.context.setSelectedPlace(this.props.id)
+    //     console.log(this.props.id)       
+    // }
     
     render() {    
         const happyHour = this.props.hh
@@ -34,7 +34,7 @@ class Place extends Component {
                 <Link 
                     to={`place/${this.props.id}`}
                     className="place-name"
-                    onClick={this.handlePlaceClick}
+                    // onClick={this.handlePlaceClick}
                 >
                     {this.props.name}
                 </Link>
@@ -56,7 +56,7 @@ class Place extends Component {
                 <button>Edit</button>
                 <button>Delete</button>
             </section>
-        );
+        )
     }
 }
 

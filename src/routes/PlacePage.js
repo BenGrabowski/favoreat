@@ -8,9 +8,10 @@ class PlacePage extends Component {
     static contextType = PlacesContext
     
     componentDidMount() {
+        console.log(this.props.match.params.id)
         this.context.clearError()
         PlacesApiService.getPlace(
-            this.context.selectedPlace.id,
+            this.props.match.params.id,
             this.context.user_id
         )
             .then(place => this.context.setSelectedPlace(place))
@@ -18,37 +19,40 @@ class PlacePage extends Component {
     }
     
     render() {
-        // const place = this.context.selectedPlace
+        const place = this.context.places[this.props.match.params.id - 1]
+        console.log(place)
 
         return (
-            <PlacesContext.Consumer>
-                {(context) => {
-                    const place = context.places.filter(place => place.id === context.selectedPlace.id)
-                    console.log(place)
+            <h1>test</h1>
+            
+            // <PlacesContext.Consumer>
+            //     {(context) => {
+            //         const place = context.places.filter(place => place.id === context.selectedPlace.id)
+            //         console.log(place)
 
-                    return (
-                        <div id="place-page">
-                        <Place
-                            id={place.id}
-                            user_id={place.user_id}
-                            name={place.name}
-                            hh={place.hh}
-                            hh_start={place.hh_start}
-                            hh_end={place.hh_end}
-                            type={place.type}
-                            notes={place.notes}
-                            items={place.items}
-                        />
-                        <Link 
-                            to='/places'
-                            className="go-back"
-                        >
-                            Go Back
-                        </Link>
-                    </div>
-                    )
-                }}
-            </PlacesContext.Consumer>
+            //         return (
+            //             <div id="place-page">
+            //             <Place
+            //                 id={place.id}
+            //                 user_id={place.user_id}
+            //                 name={place.name}
+            //                 hh={place.hh}
+            //                 hh_start={place.hh_start}
+            //                 hh_end={place.hh_end}
+            //                 type={place.type}
+            //                 notes={place.notes}
+            //                 items={place.items}
+            //             />
+            //             <Link 
+            //                 to='/places'
+            //                 className="go-back"
+            //             >
+            //                 Go Back
+            //             </Link>
+            //         </div>
+            //         )
+            //     }}
+            // </PlacesContext.Consumer>
         )
     }
 }

@@ -47,7 +47,7 @@ class App extends Component {
             component={PlacesListPage}
           />
           <Route 
-            path={'/place/:id'}
+            path={'/places/:id'}
             component={PlacePage}
           />
           <Route
