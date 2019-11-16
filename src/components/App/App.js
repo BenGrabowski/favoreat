@@ -43,6 +43,7 @@ class App extends Component {
             component={LoginPage}
           />
           <Route
+            exact
             path={'/places'}
             component={PlacesListPage}
           />

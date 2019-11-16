@@ -15,44 +15,23 @@ class PlacePage extends Component {
             this.context.user_id
         )
             .then(place => this.context.setSelectedPlace(place))
+            .then(console.log(this.context.selectedPlace))
             .catch(this.context.setError)
     }
     
     render() {
-        const place = this.context.places[this.props.match.params.id - 1]
-        console.log(place)
+        const place = this.context.selectedPlace 
 
         return (
-            <h1>test</h1>
-            
-            // <PlacesContext.Consumer>
-            //     {(context) => {
-            //         const place = context.places.filter(place => place.id === context.selectedPlace.id)
-            //         console.log(place)
-
-            //         return (
-            //             <div id="place-page">
-            //             <Place
-            //                 id={place.id}
-            //                 user_id={place.user_id}
-            //                 name={place.name}
-            //                 hh={place.hh}
-            //                 hh_start={place.hh_start}
-            //                 hh_end={place.hh_end}
-            //                 type={place.type}
-            //                 notes={place.notes}
-            //                 items={place.items}
-            //             />
-            //             <Link 
-            //                 to='/places'
-            //                 className="go-back"
-            //             >
-            //                 Go Back
-            //             </Link>
-            //         </div>
-            //         )
-            //     }}
-            // </PlacesContext.Consumer>
+            <PlacesContext.Consumer>
+                {(context) => {
+                    return (
+                        <Place 
+                            name={context.selectedPlace.place_name}
+                        />
+                    )
+                }}
+            </PlacesContext.Consumer>
         )
     }
 }
