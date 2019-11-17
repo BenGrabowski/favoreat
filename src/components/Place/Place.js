@@ -6,10 +6,13 @@ import PlacesContext from '../../PlacesContext';
 class Place extends Component {
     static contextType = PlacesContext
 
-    // handlePlaceClick = () => {
-    //     this.context.setSelectedPlace(this.props.id)
-    //     console.log(this.props.id)       
-    // }
+    renderNotes() {
+        const notes = this.props.notes
+        return (!notes) ? '' : <p id="notes"><span>Notes:</span><br />{notes}</p>
+    }
+    
+    
+    
     
     render() {    
         const happyHour = this.props.hh
@@ -19,9 +22,9 @@ class Place extends Component {
             </div>
             : <span>Happy Hour: No</span>
 
-        const notes = this.props.notes
-            ? <p id="notes"><span>Notes:</span><br />{this.props.notes}</p>
-            : ''
+        // const notes = this.props.notes
+        //     ? <p id="notes"><span>Notes:</span><br />{this.props.notes}</p>
+        //     : ''
         
         const items = (this.props.items)
         ? this.props.items.map((item, i) => {
@@ -44,7 +47,8 @@ class Place extends Component {
                 <div id="hh-box">{happyHour}</div>
                 
                 <div id="notes">
-                    {notes}
+                    {/* {notes} */}
+                    {this.renderNotes()}
                 </div>
 
                 <div id="items-ordered">

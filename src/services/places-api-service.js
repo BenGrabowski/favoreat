@@ -33,7 +33,8 @@ const PlacesApiService = {
             method: 'POST',
             headers: {
                 'content-type': 'application.json',
-                'Authorization': `bearer ${TokenService.getAuthToken()}`
+                'Authorization': `bearer ${TokenService.getAuthToken()}`,
+                'user_id': user_id,
             },
             body: JSON.stringify({
                 user_id,

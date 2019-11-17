@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import Place from '../components/Place/Place'
 import PlacesContext from '../PlacesContext'
 import PlacesApiService from '../services/places-api-service';
@@ -41,6 +42,12 @@ export default class PlacesListPage extends Component {
                         {error
                             ? <p className='red'>There was an error, try again</p>
                             : this.renderPlaces()}
+                        <Link 
+                            to='/add-place'
+                            className="add-place"
+                        >
+                            Add Place
+                        </Link>
                     </section>)
                 }}
             </PlacesContext.Consumer>

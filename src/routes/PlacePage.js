@@ -26,8 +26,16 @@ class PlacePage extends Component {
             <PlacesContext.Consumer>
                 {(context) => {
                     return (
-                        <Place 
+                        (context.selectedPlace === undefined)
+                        ? <h2>Loading selected place...</h2>
+                        : <Place 
                             name={context.selectedPlace.place_name}
+                            type={context.selectedPlace.type}
+                            notes={context.selectedPlace.notes}
+                            hh={context.selectedPlace.hh}
+                            hh_start={context.selectedPlace.hh_start}
+                            hh_end={context.selectedPlace.hh_end}
+                            items={context.selectedPlace.items}
                         />
                     )
                 }}
