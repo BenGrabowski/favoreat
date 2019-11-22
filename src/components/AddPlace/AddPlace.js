@@ -34,7 +34,7 @@ class AddPlace extends Component {
             .catch(this.context.setError)
     }
 
-    renderItemInput = () => {
+    renderItemInput = event => {
         return <AddItem />
     }
     
@@ -48,7 +48,7 @@ class AddPlace extends Component {
             <section id="add-place">
                 <form 
                     id="add-place-form"
-                    onSubmit={this.handleAddPlace}
+                    onSubmit={event => this.handleAddPlace(event)}
                 >
                     <label htmlFor="place_name">Name:</label>
                     <input type="text" name="place_name" id="place_name" required />
@@ -78,7 +78,7 @@ class AddPlace extends Component {
                         <textarea name="notes" id="notes" rows="10"></textarea>
                     </div>
     
-                    <button onClick={this.renderItemInput}>
+                    <button onClick={event => this.renderItemInput(event)}>
                         Add Menu Item
                     </button>
                     <br />
