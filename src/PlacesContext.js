@@ -6,7 +6,10 @@ const PlacesContext = React.createContext({
     error: null,
     selectedPlace: undefined,
     loggedIn: false,
+    // isAddingItem: false,
+    // setAddingItem: () => {},
     updatePlace: () => {},
+    updateItems: () => {},
     setPlaces: () => {},
     setError: () => {},
     setSelectedPlace: () => {},
@@ -22,6 +25,7 @@ export class PlacesListProvider extends Component {
         places: [],
         selectedPlace: undefined,
         error: null,
+        isAddingItem: false,
     }
 
     setUserId = id => {
@@ -31,6 +35,10 @@ export class PlacesListProvider extends Component {
     setPlaces = places => {
         this.setState({ places })
     }
+
+    // setAddingItem = status => {
+    //     this.setState({ isAddingItem: status })
+    // }
 
     setSelectedPlace = place => {
         this.setState({ selectedPlace: place })
@@ -68,6 +76,8 @@ export class PlacesListProvider extends Component {
             setError: this.setError,
             setSelectedPlace: this.setSelectedPlace,
             clearError: this.clearError,
+            // isAddingItem: this.state.isAddingItem,
+            // setAddingItem: this.setAddingItem,
         }
 
         return (

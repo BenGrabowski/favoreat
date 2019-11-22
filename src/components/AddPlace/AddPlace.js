@@ -11,6 +11,10 @@ import AddItem from '../AddItem/AddItem'
 class AddPlace extends Component {
     static contextType = PlacesContext
     
+    state = {
+        isAddingItem: false
+    }
+    
     handleAddPlace = event => {
         event.preventDefault()
         const user_id = this.context.user_id
@@ -21,6 +25,7 @@ class AddPlace extends Component {
         const hh_start = event.target.hh_start.value
         const hh_end = event.target.hh_end.value
         const notes = event.target.notes.value
+        console.log(typeof(notes))
         // const items = event.target.items.value
         const items = ['item 1', 'item 2']
 
@@ -36,7 +41,12 @@ class AddPlace extends Component {
 
     renderItemInput = event => {
         event.preventDefault()
-        return <AddItem />
+        this.setState({ isAddingItem: true })
+        // const addingItem = this.context.isAddingItem
+        const addingItem = this.state.isAddingItem
+        if (addingItem) {
+            return <AddItem />
+        }
     }
     
     render() {
@@ -82,6 +92,7 @@ class AddPlace extends Component {
                     <button onClick={event => this.renderItemInput(event)}>
                         Add Menu Item
                     </button>
+                    {this.renderItemInput}
                     <br />
                     <button type='submit'>Save</button>
                 </form>
