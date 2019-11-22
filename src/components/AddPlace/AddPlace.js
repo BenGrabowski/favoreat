@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import './AddPlace.scss'
 import PlacesApiService from '../../services/places-api-service';
 import PlacesContext from '../../PlacesContext';
+import AddItem from '../AddItem/AddItem'
 // import {MDCRipple} from '@material/ripple';
 
 // const buttonRipple = new MDCRipple(document.querySelector('.mdc-button'));
@@ -31,6 +32,10 @@ class AddPlace extends Component {
         )
             .then(history.push(destination))
             .catch(this.context.setError)
+    }
+
+    renderItemInput = () => {
+        return <AddItem />
     }
     
     render() {
@@ -73,7 +78,9 @@ class AddPlace extends Component {
                         <textarea name="notes" id="notes" rows="10"></textarea>
                     </div>
     
-                    <button>Add Menu Item</button>
+                    <button onClick={this.renderItemInput}>
+                        Add Menu Item
+                    </button>
                     <br />
                     <button type='submit'>Save</button>
                 </form>
