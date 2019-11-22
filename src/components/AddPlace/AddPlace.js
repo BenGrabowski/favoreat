@@ -35,6 +35,7 @@ class AddPlace extends Component {
     }
 
     renderItemInput = event => {
+        event.preventDefault()
         return <AddItem />
     }
     

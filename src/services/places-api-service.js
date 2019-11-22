@@ -32,7 +32,7 @@ const PlacesApiService = {
         return fetch(`${config.API_ENDPOINT}/places`, {
             method: 'POST',
             headers: {
-                'content-type': 'application.json',
+                'content-type': 'application/json',
                 'Authorization': `bearer ${TokenService.getAuthToken()}`,
                 'user_id': user_id,
             },
