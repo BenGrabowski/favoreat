@@ -4,6 +4,7 @@ import './AddPlace.scss'
 import PlacesApiService from '../../services/places-api-service';
 import PlacesContext from '../../PlacesContext';
 import AddItem from '../AddItem/AddItem'
+import TokenService from '../../services/token-service';
 // import {MDCRipple} from '@material/ripple';
 
 // const buttonRipple = new MDCRipple(document.querySelector('.mdc-button'));
@@ -17,16 +18,14 @@ class AddPlace extends Component {
     
     handleAddPlace = event => {
         event.preventDefault()
-        const user_id = this.context.user_id
+        const user_id = TokenService.getUserId()
+        console.log(user_id)
         const place_name = event.target.place_name.value
-        // console.log(place_name)
         const type = event.target.type.value
         const hh = event.target.hh.value
         const hh_start = event.target.hh_start.value
         const hh_end = event.target.hh_end.value
         const notes = event.target.notes.value
-        // console.log(typeof(notes))
-        // const items = event.target.items.value
         const items = ['item 1', 'item 2']
 
         const { location, history } = this.props
@@ -92,7 +91,7 @@ class AddPlace extends Component {
                     <button onClick={event => this.renderItemInput(event)}>
                         Add Menu Item
                     </button>
-                    {this.renderItemInput}
+                    {event => this.renderItemInput(event)}
                     <br />
                     <button type='submit'>Save</button>
                 </form>
