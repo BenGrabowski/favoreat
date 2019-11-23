@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
+import TokenService from './services/token-service';
 
 const PlacesContext = React.createContext({
-    user_id: undefined,
+    // user_id: undefined,
     places: [],
     error: null,
     selectedPlace: undefined,
@@ -21,7 +22,7 @@ export default PlacesContext
 
 export class PlacesListProvider extends Component {
     state = {
-        user_id: undefined,
+        // user_id: undefined,
         places: [],
         selectedPlace: undefined,
         error: null,
@@ -29,7 +30,8 @@ export class PlacesListProvider extends Component {
     }
 
     setUserId = id => {
-        this.setState({ user_id: id })
+        // this.setState({ user_id: id })
+        TokenService.saveUserId(id)
     }
     
     setPlaces = places => {
@@ -65,7 +67,7 @@ export class PlacesListProvider extends Component {
     
     render() {
         const contextValue = {
-            user_id: this.state.user_id,
+            // user_id: this.state.user_id,
             places: this.state.places,
             selectedPlace: this.state.selectedPlace,
             setUserId: this.setUserId,

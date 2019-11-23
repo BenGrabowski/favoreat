@@ -13,6 +13,7 @@ class Header extends Component {
     
     handleLogoutClick = () => {
         TokenService.clearAuthToken()
+        TokenService.clearUserId()
         this.renderLoginLink()
         this.context.setLoggedOut()
     }

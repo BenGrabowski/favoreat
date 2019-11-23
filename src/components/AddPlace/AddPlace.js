@@ -19,23 +19,23 @@ class AddPlace extends Component {
         event.preventDefault()
         const user_id = this.context.user_id
         const place_name = event.target.place_name.value
-        console.log(place_name)
+        // console.log(place_name)
         const type = event.target.type.value
         const hh = event.target.hh.value
         const hh_start = event.target.hh_start.value
         const hh_end = event.target.hh_end.value
         const notes = event.target.notes.value
-        console.log(typeof(notes))
+        // console.log(typeof(notes))
         // const items = event.target.items.value
         const items = ['item 1', 'item 2']
 
         const { location, history } = this.props
-        const destination = (location.state || {}).from || '/places'    
+        // const destination = (location.state || {}).from || '/places'    
         
         PlacesApiService.postPlace(
             user_id, place_name, type, hh, hh_start, hh_end, notes, items
         )
-            .then(history.push(destination))
+            .then(history.push('/places'))
             .catch(this.context.setError)
     }
 

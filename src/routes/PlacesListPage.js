@@ -4,13 +4,16 @@ import Place from '../components/Place/Place'
 import PlacesContext from '../PlacesContext'
 import PlacesApiService from '../services/places-api-service';
 import ListControls from '../components/ListControls/ListControls';
+import TokenService from '../services/token-service';
 
 export default class PlacesListPage extends Component {
     static contextType = PlacesContext
 
     componentDidMount() {
         this.context.clearError()
-        PlacesApiService.getPlaces(this.context.user_id)
+        const user_id = TokenService.getUserId()
+        console.log(user_id)
+        PlacesApiService.getPlaces(user_id)
             .then(this.context.setPlaces)
             .catch(this.context.setError)
     }

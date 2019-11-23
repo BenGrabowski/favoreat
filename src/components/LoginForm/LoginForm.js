@@ -25,6 +25,7 @@ class LoginForm extends Component {
                 user_name.value = ''
                 password.value = ''
                 TokenService.saveAuthToken(res.authToken)
+                TokenService.saveUserId(res.user_id)
                 console.log(res.authToken)
                 console.log(res.user_id)
                 console.log(res)

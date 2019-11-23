@@ -13,6 +13,15 @@ const TokenService = {
     hasAuthToken() {
       return !!TokenService.getAuthToken()
     },
+    saveUserId(id) {
+      window.localStorage.setItem('user_id', id)
+    },
+    getUserId() {
+      return window.localStorage.getItem('user_id')
+    },
+    clearUserId() {
+      window.localStorage.removeItem('user_id')
+    },
   }
   
   export default TokenService

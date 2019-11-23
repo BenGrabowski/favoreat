@@ -15,8 +15,8 @@ export default class LoginPage extends Component {
   handleLoginSuccess = user_id => {
     this.context.setUserId(user_id)
     const { location, history } = this.props
-    const destination = (location.state || {}).from || '/places'
-    history.push(destination)
+    // const destination = (location.state || {}).from || '/places'
+    history.push('/places')
     this.context.setLoggedIn()
   }
 
