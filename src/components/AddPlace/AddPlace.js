@@ -42,10 +42,10 @@ class AddPlace extends Component {
         this.setState({ isAddingItem: true })
     }
 
-    handleAddItem = event => {
-        event.preventDefault()
-        console.log(event)
-        const item = event.target.value
+    handleAddItem = item => {
+        // event.preventDefault()
+        // console.log(event)
+        // const item = event.target.value
         this.state.items.push(item)
     }
     
