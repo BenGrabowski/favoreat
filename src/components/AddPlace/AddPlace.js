@@ -5,15 +5,13 @@ import PlacesApiService from '../../services/places-api-service';
 import PlacesContext from '../../PlacesContext';
 import AddItem from '../AddItem/AddItem'
 import TokenService from '../../services/token-service';
-// import {MDCRipple} from '@material/ripple';
-
-// const buttonRipple = new MDCRipple(document.querySelector('.mdc-button'));
 
 class AddPlace extends Component {
     static contextType = PlacesContext
     
     state = {
-        isAddingItem: false
+        isAddingItem: false,
+        items: []
     }
     
     handleAddPlace = event => {
@@ -26,7 +24,8 @@ class AddPlace extends Component {
         const hh_start = event.target.hh_start.value
         const hh_end = event.target.hh_end.value
         const notes = event.target.notes.value
-        const items = ['item 1', 'item 2']
+        const items = this.state.items
+        console.log(items)
 
         const { location, history } = this.props
         // const destination = (location.state || {}).from || '/places'    
@@ -41,14 +40,20 @@ class AddPlace extends Component {
     renderItemInput = event => {
         event.preventDefault()
         this.setState({ isAddingItem: true })
-        // const addingItem = this.context.isAddingItem
-        const addingItem = this.state.isAddingItem
-        if (addingItem) {
-            return <AddItem />
-        }
+    }
+
+    handleAddItem = event => {
+        event.preventDefault()
+        console.log(event)
+        const item = event.target.item_name.value
+        this.state.items.push(item)
     }
     
     render() {
+        const itemsList = this.state.items.map(item => {
+            return <li>{item}</li>
+        })
+        
         return (
             <>
             <header id="add-place-header">
@@ -87,17 +92,23 @@ class AddPlace extends Component {
                         <br />
                         <textarea name="notes" id="notes" rows="10"></textarea>
                     </div>
-    
+                        
                     <button onClick={event => this.renderItemInput(event)}>
                         Add Menu Item
                     </button>
-                    {event => this.renderItemInput(event)}
+                    {this.state.isAddingItem 
+                        ? <AddItem handleAddItem={this.handleAddItem} /> 
+                        : null 
+                    }
                     <br />
+                    <ul>
+                        {itemsList}
+                    </ul>
                     <button type='submit'>Save</button>
                 </form>
                 <Link 
                     to='/places' 
-                    className="go-back mdc-button">
+                >
                     Go Back
                 </Link>
             </section>
