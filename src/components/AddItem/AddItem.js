@@ -1,17 +1,31 @@
 import React, { Component } from 'react'
 
 class AddItem extends Component {
+    state = {
+        item: undefined
+    }
+
+    updateItem = event => {
+        this.setState({
+            item: event.target.value
+        })
+    }
+    
     render() {    
         return (
-            <form onSubmit={event => this.props.handleAddItem(event)}>
+            <div>
                 <label htmlFor="item_name">Item: </label>
-                <input type="text" name="item_name" />
+                <input 
+                    type="text" 
+                    name="item_name" 
+                    onChange={event => this.updateItem(event)}
+                />
                 <button 
-                    type="submit"
+                    onClick={this.props.handleAddItem(this.state.item)}
                 >
                     Save
                 </button>
-            </form>
+            </div>
         )
     }
 }

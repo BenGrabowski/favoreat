@@ -45,7 +45,7 @@ class AddPlace extends Component {
     handleAddItem = event => {
         event.preventDefault()
         console.log(event)
-        const item = event.target.item_name.value
+        const item = event.target.value
         this.state.items.push(item)
     }
     

@@ -11,14 +11,12 @@ class Place extends Component {
         return (!notes) ? '' : <p id="notes"><span>Notes:</span><br />{notes}</p>
     }
     
-    
-    
-    
     render() {    
+        // console.log(this.props)
         const happyHour = this.props.hh
             ? <div>
                 <p className="hh">Happy Hour: Yes</p>
-                <p className="hh">{`${this.props.hh.start} - ${this.props.hh.end}`}</p>
+                <p className="hh">{`${this.props.hh_start} - ${this.props.hh_end}`}</p>
             </div>
             : <span>Happy Hour: No</span>
 
