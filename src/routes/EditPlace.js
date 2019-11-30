@@ -24,7 +24,10 @@ class EditPlace extends Component {
             this.props.match.params.id,
             this.context.user_id
         )
-            .then(place => this.context.setSelectedPlace(place))
+            .then(place => {
+                this.context.setSelectedPlace(place)
+                return place
+            })
             .then(place => {
                     this.setState({
                         place_name: place.place_name,
@@ -55,13 +58,27 @@ class EditPlace extends Component {
     }
 
     updatePlaceName = event => {
-        this.setState
+        this.setState({
+            place_name: event.target.value
+        })
+    }
+
+    updateType = event => {
+        this.setState({
+            type: event.target.value
+        })
+    }
+
+    updateHappyHour = event => {
+        this.setState({
+            hh: event.target.value
+        })
     }
     
     render() {
         const { place_name, type, hh, hh_start, hh_end, notes } = this.state
-        const itemsList = this.state.items.map(item => {
-            return <li>{item}</li>
+        const itemsList = this.state.items.map((item, index) => {
+            return <li key={index}>{item}</li>
         })
         
         return (
@@ -74,13 +91,15 @@ class EditPlace extends Component {
                     <input 
                         type="text" 
                         name="place_name"
-                        value={place_name} 
+                        value={place_name}
+                        onChange={event => this.updatePlaceName(event)} 
                     />
                     <br />
                     <label htmlFor="type">Type:</label>
                     <select 
                         name="type"
                         value={type}
+                        onChange={event => this.updateType(event)}
                     >
                         <option value="restaurant">Restaurant</option>
                         <option value="bar">Bar</option>
@@ -94,6 +113,7 @@ class EditPlace extends Component {
                             type="checkbox" 
                             name="hh"
                             value={hh}
+                            onChange={event => this.updateHappyHour(event)}
                         />
                         <br />
                         <label htmlFor="hh_start">Starts</label>

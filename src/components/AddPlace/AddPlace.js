@@ -11,7 +11,8 @@ class AddPlace extends Component {
     
     state = {
         isAddingItem: false,
-        items: []
+        items: [],
+        hh: false
     }
     
     handleAddPlace = event => {
@@ -42,10 +43,25 @@ class AddPlace extends Component {
         this.setState({ isAddingItem: true })
     }
 
+    renderHhStartEnd = () => {
+        return (
+            <div id="hh-start-end">
+                <label htmlFor="hh_start">Starts</label>
+                <input type="time" name="hh_start" />
+                <br />
+                <label htmlFor="hh_end">Ends</label>
+                <input type="time" name="hh_end" />
+            </div>
+        )
+    }
+
+    setHappyHour = event => {
+        this.setState({
+            hh: event.target.value
+        })
+    }
+
     handleAddItem = item => {
-        // event.preventDefault()
-        // console.log(event)
-        // const item = event.target.value
         this.state.items.push(item)
     }
     
@@ -78,13 +94,16 @@ class AddPlace extends Component {
 
                     <div id="happy-hour-container">
                         <label htmlFor="hh">Happy Hour</label>
-                        <input type="checkbox" name="hh" />
+                        <select onChange={event => this.setHappyHour(event)}>
+                            <option value="no">No</option>
+                            <option value="yes">Yes</option>
+                        </select>
                         <br />
-                        <label htmlFor="hh_start">Starts</label>
-                        <input type="time" name="hh_start" />
-                        <br />
-                        <label htmlFor="hh_end">Ends</label>
-                        <input type="time" name="hh_end" />
+                        {
+                            (this.state.hh === 'yes') 
+                            ? this.renderHhStartEnd() 
+                            : null
+                        }
                     </div>
                     
                     <div id="notes">
