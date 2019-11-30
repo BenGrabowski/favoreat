@@ -93,6 +93,9 @@ class AddPlace extends Component {
                         <textarea name="notes" id="notes" rows="10"></textarea>
                     </div>
                         
+                    <ul>
+                        {itemsList}
+                    </ul>
                     <button onClick={event => this.renderItemInput(event)}>
                         Add Menu Item
                     </button>
@@ -101,9 +104,6 @@ class AddPlace extends Component {
                         : null 
                     }
                     <br />
-                    <ul>
-                        {itemsList}
-                    </ul>
                     <button type='submit'>Save</button>
                 </form>
                 <Link 

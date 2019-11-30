@@ -8,6 +8,7 @@ import LoginPage from '../../routes/LoginPage';
 import PlacesListPage from '../../routes/PlacesListPage'
 import AddPlace from '../AddPlace/AddPlace';
 import PlacePage from '../../routes/PlacePage';
+import EditPlace from '../../routes/EditPlace';
 import { PlacesListProvider } from '../../PlacesContext'
 import '../../index.css';
 
@@ -48,12 +49,17 @@ class App extends Component {
             component={PlacesListPage}
           />
           <Route 
+            exact
             path={'/places/:id'}
             component={PlacePage}
           />
           <Route
             path={'/add-place'}
             component={AddPlace}
+          />
+          <Route 
+            path={'/places/:id/edit'}
+            component={EditPlace}
           />
           </Switch>
         </main>

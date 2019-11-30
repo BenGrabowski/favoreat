@@ -10,19 +10,25 @@ class Place extends Component {
         const notes = this.props.notes
         return (!notes) ? '' : <p id="notes"><span>Notes:</span><br />{notes}</p>
     }
+
+    renderHappyHour() {
+        const hh = this.props.hh
+        return (!hh)
+        ? ''
+        : <div>
+            <p className="hh">Happy Hour: Yes</p>
+            <p className="hh">{`${this.props.hh_start} - ${this.props.hh_end}`}</p>
+        </div>
+    }
     
     render() {    
         // console.log(this.props)
-        const happyHour = this.props.hh
-            ? <div>
-                <p className="hh">Happy Hour: Yes</p>
-                <p className="hh">{`${this.props.hh_start} - ${this.props.hh_end}`}</p>
-            </div>
-            : <span>Happy Hour: No</span>
-
-        // const notes = this.props.notes
-        //     ? <p id="notes"><span>Notes:</span><br />{this.props.notes}</p>
-        //     : ''
+        // const happyHour = this.props.hh
+        //     ? <div>
+        //         <p className="hh">Happy Hour: Yes</p>
+        //         <p className="hh">{`${this.props.hh_start} - ${this.props.hh_end}`}</p>
+        //     </div>
+        //     : <span>Happy Hour: No</span>
         
         const items = (this.props.items)
         ? this.props.items.map((item, i) => {
@@ -42,7 +48,10 @@ class Place extends Component {
                 
                 <h3 className="place-type">{this.props.type}</h3>
                 
-                <div id="hh-box">{happyHour}</div>
+                <div id="hh-box">
+                    {/* {happyHour} */}
+                    {this.renderHappyHour()}
+                </div>
                 
                 <div id="notes">
                     {/* {notes} */}
@@ -55,7 +64,11 @@ class Place extends Component {
                         {items}
                     </ul>
                 </div>
-                <button>Edit</button>
+                <Link
+                    to={`/places/${this.props.id}/edit`}
+                >
+                    Edit
+                </Link>
                 <button>Delete</button>
             </section>
         )
