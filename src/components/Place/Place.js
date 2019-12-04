@@ -2,9 +2,15 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import './Place.css'
 import PlacesContext from '../../PlacesContext';
+import PlacesApiService from '../../services/places-api-service';
+import TokenService from '../../services/token-service';
 
 class Place extends Component {
     static contextType = PlacesContext
+
+    // static defaultProps = {
+    //     id: undefined
+    // }
 
     renderNotes() {
         const notes = this.props.notes
@@ -19,6 +25,17 @@ class Place extends Component {
             <p className="hh">Happy Hour: Yes</p>
             <p className="hh">{`${this.props.hh_start} - ${this.props.hh_end}`}</p>
         </div>
+    }
+
+    deletePlace = () => {
+        const user_id = TokenService.getUserId()
+        PlacesApiService.deletePlace(
+            user_id,
+            this.props.id
+        )
+            .then(
+                //Go Back to PlacesList
+            )
     }
     
     render() {    
@@ -69,7 +86,9 @@ class Place extends Component {
                 >
                     Edit
                 </Link>
-                <button>Delete</button>
+                <button onClick={this.deletePlace}>
+                    Delete
+                </button>
             </section>
         )
     }

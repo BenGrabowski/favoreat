@@ -68,7 +68,23 @@ const PlacesApiService = {
              ? res.json().then(e => Promise.reject(e))
              : res.json()
         )
-    }
+    },
+    deletePlace(user_id, placeId) {
+        return fetch(`${config.API_ENDPOINT}/places/${placeId}`, {
+            method: 'DELETE',
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': `bearer ${TokenService.getAuthToken()}`,
+                'user_id': user_id,
+            }
+        })
+        .then(res =>
+            (!res.ok)
+             ? res.json().then(e => Promise.reject(e))
+             : res.json()
+        )
+        .catch(error => console.log(error))        
+    },
 }
 
 export default PlacesApiService

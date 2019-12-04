@@ -60,7 +60,7 @@ class AddPlace extends Component {
     }
 
     handleAddItem = item => {
-        this.state.items.push(item)
+        console.log(item)
     }
 
     updateHhStart = event => {
