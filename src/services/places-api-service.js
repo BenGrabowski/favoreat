@@ -52,6 +52,22 @@ const PlacesApiService = {
              ? res.json().then(e => Promise.reject(e))
              : res.json()
         )
+    },
+    patchPlace(user_id, placeId, newPlace) {
+        return fetch(`${config.API_ENDPOINT}/places/${placeId}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': `bearer ${TokenService.getAuthToken()}`,
+                'user_id': user_id,
+            },
+            body: JSON.stringify(newPlace)
+        })
+        .then(res =>
+            (!res.ok)
+             ? res.json().then(e => Promise.reject(e))
+             : res.json()
+        )
     }
 }
 

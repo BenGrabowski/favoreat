@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import PlacesContext from '../PlacesContext'
 import PlacesApiService from '../services/places-api-service'
 import AddItem from '../components/AddItem/AddItem'
+import TokenService from '../services/token-service';
 
 class EditPlace extends Component {
     state = {
@@ -46,6 +47,20 @@ class EditPlace extends Component {
     handleEditPlace = event => {
         event.preventDefault()
         //PATCH request here
+        const user_id = TokenService.getUserId()
+        const placeId = this.props.match.params.id
+        const { place_name, type, hh, hh_start, hh_end, notes, items } = this.state
+        const newPlace = {
+            place_name,
+            type,
+            hh,
+            hh_start,
+            hh_end,
+            notes,
+            items
+        }
+        
+        PlacesApiService.patchPlace(user_id, placeId, newPlace)
     }
 
     handleAddItem = item => {
@@ -55,6 +70,46 @@ class EditPlace extends Component {
     renderItemInput = event => {
         event.preventDefault()
         this.setState({ isAddingItem: true })
+    }
+
+    updateHhStart = event => {
+        this.setState({
+            hh_start: event.target.value
+        })
+    }
+
+    updateHhEnd = event => {
+        this.setState({
+            hh_end: event.target.value
+        })
+    }
+
+    updateNotes = event => {
+        this.setState({
+            notes: event.target.value
+        })
+    }
+    
+    renderHhStartEnd = () => {
+        return (
+            <div id="hh-start-end">
+                <label htmlFor="hh_start">Starts</label>
+                <input 
+                    type="time" 
+                    name="hh_start"
+                    value={this.state.hh_start}
+                    onChange={event => this.updateHhStart(event)} 
+                />
+                <br />
+                <label htmlFor="hh_end">Ends</label>
+                <input 
+                    type="time" 
+                    name="hh_end"
+                    value={this.state.hh_end}
+                    onChange={event => this.updateHhEnd(event)} 
+                />
+            </div>
+        )
     }
 
     updatePlaceName = event => {
@@ -70,8 +125,12 @@ class EditPlace extends Component {
     }
 
     updateHappyHour = event => {
-        this.setState({
-            hh: event.target.value
+        (event.target.value === 'yes')
+        ? this.setState({ hh: event.target.value })
+        : this.setState({
+            hh: event.target.value,
+            hh_start: undefined,
+            hh_end: undefined
         })
     }
     
@@ -109,26 +168,19 @@ class EditPlace extends Component {
 
                     <div id="happy-hour-container">
                         <label htmlFor="hh">Happy Hour</label>
-                        <input 
-                            type="checkbox" 
-                            name="hh"
+                        <select 
                             value={hh}
-                            onChange={event => this.updateHappyHour(event)}
-                        />
+                            onChange={event => this.setHappyHour(event)}
+                        >
+                            <option value="no">No</option>
+                            <option value="yes">Yes</option>
+                        </select>
                         <br />
-                        <label htmlFor="hh_start">Starts</label>
-                        <input 
-                            type="time" 
-                            name="hh_start" 
-                            value={hh_start}
-                        />
-                        <br />
-                        <label htmlFor="hh_end">Ends</label>
-                        <input 
-                            type="time" 
-                            name="hh_end"
-                            value={hh_end} 
-                        />
+                        {
+                            (this.state.hh === 'yes') 
+                            ? this.renderHhStartEnd() 
+                            : null
+                        }
                     </div>
                     
                     <div id="notes">
@@ -139,6 +191,7 @@ class EditPlace extends Component {
                             id="notes" 
                             rows="10"
                             value={notes}
+                            onChange={event => this.updateNotes(event)}
                         >
                         </textarea>
                     </div>

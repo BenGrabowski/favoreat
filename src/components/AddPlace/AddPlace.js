@@ -11,23 +11,19 @@ class AddPlace extends Component {
     
     state = {
         isAddingItem: false,
-        items: [],
-        hh: false
+        place_name: '',
+        type: '',
+        hh: 'no',
+        hh_start: '',
+        hh_end: '',
+        notes: '',
+        items: []
     }
     
     handleAddPlace = event => {
         event.preventDefault()
         const user_id = TokenService.getUserId()
-        console.log(user_id)
-        const place_name = event.target.place_name.value
-        const type = event.target.type.value
-        const hh = event.target.hh.value
-        const hh_start = event.target.hh_start.value
-        const hh_end = event.target.hh_end.value
-        const notes = event.target.notes.value
-        const items = this.state.items
-        console.log(items)
-
+        const { place_name, type, hh, hh_start, hh_end, notes, items } = this.state
         const { location, history } = this.props
         // const destination = (location.state || {}).from || '/places'    
         
@@ -47,22 +43,60 @@ class AddPlace extends Component {
         return (
             <div id="hh-start-end">
                 <label htmlFor="hh_start">Starts</label>
-                <input type="time" name="hh_start" />
+                <input 
+                    type="time"
+                    name="hh_start"
+                    onChange={event => this.updateHhStart(event)} 
+                />
                 <br />
                 <label htmlFor="hh_end">Ends</label>
-                <input type="time" name="hh_end" />
+                <input 
+                    type="time" 
+                    name="hh_end"
+                    onChange={event => this.updateHhEnd(event)}  
+                />
             </div>
         )
     }
 
-    setHappyHour = event => {
+    handleAddItem = item => {
+        this.state.items.push(item)
+    }
+
+    updateHhStart = event => {
         this.setState({
-            hh: event.target.value
+            hh_start: event.target.value
         })
     }
 
-    handleAddItem = item => {
-        this.state.items.push(item)
+    updateHhEnd = event => {
+        this.setState({
+            hh_end: event.target.value
+        })
+    }
+
+    updateNotes = event => {
+        this.setState({
+            notes: event.target.value
+        })
+    }
+
+    updatePlaceName = event => {
+        this.setState({
+            place_name: event.target.value
+        })
+    }
+
+    updateType = event => {
+        this.setState({
+            type: event.target.value
+        })
+    }
+
+    updateHappyHour = event => {
+        this.setState({
+            hh: event.target.value
+        })
     }
     
     render() {
@@ -82,10 +116,19 @@ class AddPlace extends Component {
                     onSubmit={event => this.handleAddPlace(event)}
                 >
                     <label htmlFor="place_name">Name:</label>
-                    <input type="text" name="place_name" id="place_name" required />
+                    <input 
+                        type="text" 
+                        name="place_name" 
+                        id="place_name" 
+                        onChange={event => this.updatePlaceName(event)}
+                        required 
+                    />
                     <br />
                     <label htmlFor="type">Type:</label>
-                    <select name="type">
+                    <select 
+                        name="type"
+                        onChange={event => this.updateType(event)}
+                    >
                         <option value="restaurant">Restaurant</option>
                         <option value="bar">Bar</option>
                         <option value="brewery">Brewery</option>
@@ -94,7 +137,7 @@ class AddPlace extends Component {
 
                     <div id="happy-hour-container">
                         <label htmlFor="hh">Happy Hour</label>
-                        <select onChange={event => this.setHappyHour(event)}>
+                        <select onChange={event => this.updateHappyHour(event)}>
                             <option value="no">No</option>
                             <option value="yes">Yes</option>
                         </select>
@@ -109,7 +152,12 @@ class AddPlace extends Component {
                     <div id="notes">
                         <label htmlFor="notes">Notes:</label>
                         <br />
-                        <textarea name="notes" id="notes" rows="10"></textarea>
+                        <textarea 
+                            name="notes" 
+                            id="notes" 
+                            rows="10"
+                            onChange={event => this.updateNotes(event)}
+                        ></textarea>
                     </div>
                         
                     <ul>
