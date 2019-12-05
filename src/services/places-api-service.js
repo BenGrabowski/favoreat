@@ -63,11 +63,7 @@ const PlacesApiService = {
             },
             body: JSON.stringify(newPlace)
         })
-        .then(res =>
-            (!res.ok)
-             ? res.json().then(e => Promise.reject(e))
-             : res.json()
-        )
+        .catch(error => console.log(error))
     },
     deletePlace(user_id, placeId) {
         return fetch(`${config.API_ENDPOINT}/places/${placeId}`, {

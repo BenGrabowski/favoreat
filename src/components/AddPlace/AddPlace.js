@@ -5,6 +5,7 @@ import PlacesApiService from '../../services/places-api-service';
 import PlacesContext from '../../PlacesContext';
 import AddItem from '../AddItem/AddItem'
 import TokenService from '../../services/token-service';
+import MenuItem from '../MenuItem';
 
 class AddPlace extends Component {
     static contextType = PlacesContext
@@ -40,11 +41,14 @@ class AddPlace extends Component {
 
     renderItemList = event => {
         // event.preventDefault()
-        const items = this.state.items.map(item => <li>{item}</li>) 
+        // const items = this.state.items.map(item => <li>{item}<button>remove</button></li>) 
+        const items = this.state.items.map(item => {
+            return <MenuItem itemName={item} />
+        }) 
         return (
-            <ul>
+            // <ul>
                 {items}
-            </ul>
+            // </ul>
         )
     }
 

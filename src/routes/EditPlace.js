@@ -49,7 +49,9 @@ class EditPlace extends Component {
         //PATCH request here
         const user_id = TokenService.getUserId()
         const placeId = this.props.match.params.id
+        console.log(placeId)
         const { place_name, type, hh, hh_start, hh_end, notes, items } = this.state
+        const { history } = this.props
         const newPlace = {
             place_name,
             type,
@@ -61,15 +63,32 @@ class EditPlace extends Component {
         }
         
         PlacesApiService.patchPlace(user_id, placeId, newPlace)
+            .then(() => history.push('/places'))
+            .catch(this.context.setError)
     }
 
     handleAddItem = item => {
-        this.state.items.push(item)
+        console.log(item)
+        this.setState({
+            items: this.state.items.concat( [item ] ),
+            isAddingItem: false
+        })
+        this.renderItemList()
     }
 
     renderItemInput = event => {
         event.preventDefault()
         this.setState({ isAddingItem: true })
+    }
+
+    renderItemList = event => {
+        // event.preventDefault()
+        const items = this.state.items.map(item => <li>{item}</li>) 
+        return (
+            <ul>
+                {items}
+            </ul>
+        )
     }
 
     updateHhStart = event => {
@@ -170,7 +189,7 @@ class EditPlace extends Component {
                         <label htmlFor="hh">Happy Hour</label>
                         <select 
                             value={hh}
-                            onChange={event => this.setHappyHour(event)}
+                            onChange={event => this.updateHappyHour(event)}
                         >
                             <option value="no">No</option>
                             <option value="yes">Yes</option>
