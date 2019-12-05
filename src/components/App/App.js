@@ -9,7 +9,8 @@ import PlacesListPage from '../../routes/PlacesListPage'
 import AddPlace from '../AddPlace/AddPlace';
 import PlacePage from '../../routes/PlacePage';
 import EditPlace from '../../routes/EditPlace';
-import { PlacesListProvider } from '../../PlacesContext'
+import { PlacesListProvider } from '../../PlacesContext';
+import NotFoundPage from '../../routes/NotFoundPage';
 import '../../index.css';
 
 class App extends Component {
@@ -61,6 +62,7 @@ class App extends Component {
             path={'/places/:id/edit'}
             component={EditPlace}
           />
+          <Route component={NotFoundPage} />
           </Switch>
         </main>
       </div>

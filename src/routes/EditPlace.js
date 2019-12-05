@@ -135,7 +135,7 @@ class EditPlace extends Component {
     }
     
     render() {
-        const { place_name, type, hh, hh_start, hh_end, notes } = this.state
+        const { place_name, type, hh, notes } = this.state
         const itemsList = this.state.items.map((item, index) => {
             return <li key={index}>{item}</li>
         })

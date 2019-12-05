@@ -9,13 +9,22 @@ import TokenService from '../services/token-service';
 export default class PlacesListPage extends Component {
     static contextType = PlacesContext
 
+    state = {
+        places: this.context.places
+    }
+    
     componentDidMount() {
         this.context.clearError()
         const user_id = TokenService.getUserId()
         console.log(user_id)
+        console.log('PlacesListPage mounted')
         PlacesApiService.getPlaces(user_id)
             .then(this.context.setPlaces)
             .catch(this.context.setError)
+    }
+
+    rerenderList = () => {
+        this.setState({ places: this.state.places })
     }
 
     renderPlaces() {
@@ -31,6 +40,7 @@ export default class PlacesListPage extends Component {
                 hh_start={place.hh_start}
                 hh_end={place.hh_end}
                 items={place.items}
+                rerenderList={this.rerenderList}
             />   
         )
     }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import './Place.css'
 import PlacesContext from '../../PlacesContext';
 import PlacesApiService from '../../services/places-api-service';
@@ -8,10 +8,6 @@ import TokenService from '../../services/token-service';
 class Place extends Component {
     static contextType = PlacesContext
 
-    // static defaultProps = {
-    //     id: undefined
-    // }
-
     renderNotes() {
         const notes = this.props.notes
         return (!notes) ? '' : <p id="notes"><span>Notes:</span><br />{notes}</p>
@@ -19,10 +15,10 @@ class Place extends Component {
 
     renderHappyHour() {
         const hh = this.props.hh
-        return (!hh)
+        return (hh === "no")
         ? ''
         : <div>
-            <p className="hh">Happy Hour: Yes</p>
+            <p className="hh">Happy Hour:</p>
             <p className="hh">{`${this.props.hh_start} - ${this.props.hh_end}`}</p>
         </div>
     }
@@ -33,26 +29,20 @@ class Place extends Component {
             user_id,
             this.props.id
         )
-            .then(
-                //Go Back to PlacesList
+            .then(() => {
+                    this.props.history.push('/places')
+                    this.props.rerenderList()
+                }
             )
     }
     
-    render() {    
-        // console.log(this.props)
-        // const happyHour = this.props.hh
-        //     ? <div>
-        //         <p className="hh">Happy Hour: Yes</p>
-        //         <p className="hh">{`${this.props.hh_start} - ${this.props.hh_end}`}</p>
-        //     </div>
-        //     : <span>Happy Hour: No</span>
-        
+    render() {            
         const items = (this.props.items)
         ? this.props.items.map((item, i) => {
             return <li key={i}>{item}</li>
         })
         : ''
-        
+
         return (
             <section className="place-section">
                 <Link 
@@ -94,4 +84,4 @@ class Place extends Component {
     }
 }
 
-export default Place;
+export default withRouter(Place);

@@ -10,6 +10,11 @@ class AddItem extends Component {
             item: event.target.value
         })
     }
+
+    handleAddItem = event => {
+        event.preventDefault()
+        this.props.handleAddItem(this.state.item)
+    }
     
     render() {    
         return (
@@ -21,7 +26,7 @@ class AddItem extends Component {
                     onChange={event => this.updateItem(event)}
                 />
                 <button 
-                    onClick={this.props.handleAddItem(this.state.item)}
+                    onClick={this.handleAddItem}
                 >
                     Save
                 </button>

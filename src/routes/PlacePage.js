@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import PlacesContext from '../PlacesContext'
 import Place from '../components/Place/Place'
 import PlacesApiService from '../services/places-api-service'
@@ -20,7 +20,7 @@ class PlacePage extends Component {
     }
     
     render() {
-        const place = this.context.selectedPlace 
+        // const place = this.context.selectedPlace 
 
         return (
             <PlacesContext.Consumer>
@@ -29,6 +29,7 @@ class PlacePage extends Component {
                         (context.selectedPlace === undefined)
                         ? <h2>Loading selected place...</h2>
                         : <Place 
+                            id={context.selectedPlace.id}
                             name={context.selectedPlace.place_name}
                             type={context.selectedPlace.type}
                             notes={context.selectedPlace.notes}

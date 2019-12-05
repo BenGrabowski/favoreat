@@ -24,19 +24,28 @@ class AddPlace extends Component {
         event.preventDefault()
         const user_id = TokenService.getUserId()
         const { place_name, type, hh, hh_start, hh_end, notes, items } = this.state
-        const { location, history } = this.props
-        // const destination = (location.state || {}).from || '/places'    
+        const { history } = this.props
         
         PlacesApiService.postPlace(
             user_id, place_name, type, hh, hh_start, hh_end, notes, items
         )
-            .then(history.push('/places'))
+            .then(() => history.push('/places'))
             .catch(this.context.setError)
     }
 
     renderItemInput = event => {
         event.preventDefault()
         this.setState({ isAddingItem: true })
+    }
+
+    renderItemList = event => {
+        // event.preventDefault()
+        const items = this.state.items.map(item => <li>{item}</li>) 
+        return (
+            <ul>
+                {items}
+            </ul>
+        )
     }
 
     renderHhStartEnd = () => {
@@ -61,6 +70,11 @@ class AddPlace extends Component {
 
     handleAddItem = item => {
         console.log(item)
+        this.setState({
+            items: this.state.items.concat( [item ] ),
+            isAddingItem: false
+        })
+        this.renderItemList()
     }
 
     updateHhStart = event => {

@@ -78,11 +78,6 @@ const PlacesApiService = {
                 'user_id': user_id,
             }
         })
-        .then(res =>
-            (!res.ok)
-             ? res.json().then(e => Promise.reject(e))
-             : res.json()
-        )
         .catch(error => console.log(error))        
     },
 }
