@@ -9,7 +9,8 @@ class LoginForm extends Component {
         onLoginSuccess: () => {}
     }
 
-    // state = { error: null }
+    state = { error: null }
+
     static contextType = PlacesContext
     
     handleSubmitJwtAuth = event => {
@@ -36,12 +37,19 @@ class LoginForm extends Component {
                 this.setState({ error: res.error })
             })
     }
+
+    renderInvalidMessage = () => {
+        return (
+            <p>invalid username or password</p>
+        )
+    }
     
     render() {
-        // const { error } = this.state
+        const { error } = this.state
+        
         return (
             <section id="login">
-                {/* {this.renderInvalidMessage()} */}
+                {(error) ? this.renderInvalidMessage() : null}
                 <form 
                     className='login-form'
                     onSubmit={this.handleSubmitJwtAuth}
