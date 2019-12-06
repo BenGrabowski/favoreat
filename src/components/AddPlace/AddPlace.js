@@ -179,7 +179,8 @@ class AddPlace extends Component {
                     </div>
                         
                     <ul>
-                        {itemsList}
+                        {/* {itemsList} */}
+                        {this.renderItemList()}
                     </ul>
                     <button onClick={event => this.renderItemInput(event)}>
                         Add Menu Item

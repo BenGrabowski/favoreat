@@ -41,6 +41,7 @@ class LoginForm extends Component {
         // const { error } = this.state
         return (
             <section id="login">
+                {/* {this.renderInvalidMessage()} */}
                 <form 
                     className='login-form'
                     onSubmit={this.handleSubmitJwtAuth}
