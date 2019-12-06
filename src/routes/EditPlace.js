@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 import PlacesContext from '../PlacesContext'
 import PlacesApiService from '../services/places-api-service'
 import AddItem from '../components/AddItem/AddItem'
-import TokenService from '../services/token-service';
+import TokenService from '../services/token-service'
+import MenuItem from '../components/MenuItem'
 
 class EditPlace extends Component {
     state = {
@@ -76,19 +77,24 @@ class EditPlace extends Component {
         this.renderItemList()
     }
 
+    removeItem = (event, index) => {
+        event.preventDefault()
+        const newItems = this.state.items.filter(item => item !== this.state.items[index])
+        this.setState({
+            items: newItems
+        })
+    }
+
     renderItemInput = event => {
         event.preventDefault()
         this.setState({ isAddingItem: true })
     }
 
-    renderItemList = event => {
-        // event.preventDefault()
-        const items = this.state.items.map(item => <li>{item}</li>) 
-        return (
-            <ul>
-                {items}
-            </ul>
-        )
+    renderItemList = () => {
+        const items = this.state.items.map((item, index) => {
+            return <MenuItem itemName={item} index={index} key={index} removeItem={this.removeItem} />
+        }) 
+        return items
     }
 
     updateHhStart = event => {
@@ -155,9 +161,9 @@ class EditPlace extends Component {
     
     render() {
         const { place_name, type, hh, notes } = this.state
-        const itemsList = this.state.items.map((item, index) => {
-            return <li key={index}>{item}</li>
-        })
+        // const itemsList = this.state.items.map((item, index) => {
+        //     return <li key={index}>{item}</li>
+        // })
         
         return (
             <section id="edit-place">
@@ -216,7 +222,7 @@ class EditPlace extends Component {
                     </div>
                         
                     <ul>
-                        {itemsList}
+                        {this.renderItemList()}
                     </ul>
                     <button onClick={event => this.renderItemInput(event)}>
                         Add Menu Item

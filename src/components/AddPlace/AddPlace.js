@@ -39,11 +39,9 @@ class AddPlace extends Component {
         this.setState({ isAddingItem: true })
     }
 
-    renderItemList = event => {
-        // event.preventDefault()
-        // const items = this.state.items.map(item => <li>{item}<button>remove</button></li>) 
+    renderItemList = () => {
         const items = this.state.items.map((item, index) => {
-            return <MenuItem itemName={item} index={index} removeItem={this.removeItem} />
+            return <MenuItem itemName={item} index={index} key={index} removeItem={this.removeItem} />
         }) 
         return items
     }
@@ -122,10 +120,6 @@ class AddPlace extends Component {
     }
     
     render() {
-        // const itemsList = this.state.items.map(item => {
-        //     return <li>{item}</li>
-        // })
-        
         return (
             <>
             <header id="add-place-header">
