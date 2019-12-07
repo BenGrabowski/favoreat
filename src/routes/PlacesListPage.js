@@ -11,7 +11,8 @@ export default class PlacesListPage extends Component {
 
     state = {
         // places: this.context.places,
-        sortType: 'all'
+        sortType: 'all',
+        happyHour: false
     }
     
     componentDidMount() {
@@ -22,7 +23,7 @@ export default class PlacesListPage extends Component {
         PlacesApiService.getPlaces(user_id)
             .then(res => {
                     console.log(res)
-                    console.log(typeof(res))
+                    // console.log(typeof(res))
                     this.context.setPlaces(res)
                 }
             )
@@ -39,20 +40,38 @@ export default class PlacesListPage extends Component {
         })
     }
 
+    updateHappyHour = checked => {
+        console.log(checked)
+        this.setState({
+            happyHour: checked
+        })
+        // this.setState({
+        //     happyHour: event.target.value
+        // })
+    }
+
     renderPlaces() {
         // const { places = [] } = this.context
         // const { places } = this.context
         let places
         
         if (this.state.sortType === 'all') {
-            places = this.context.places
+            if (!this.state.happyHour) {
+                places = this.context.places
+            } else {
+                places = this.context.places.filter(place => place.hh)
+            }
         } else {
-            places = this.context.places.filter(place => place.type === this.state.sortType)
+            if (!this.state.happyHour) {
+                places = this.context.places.filter(place => place.type === this.state.sortType)
+            } else {
+                places = this.context.places.filter(place => place.type === this.state.sortType && place.hh)                
+            }
         }
         console.log(places)
         console.log(this.context.places)
 
-        return places.map(place =>
+        return places && places.map(place =>
             <Place
                 key={place.id}
                 id={place.id}
@@ -74,7 +93,10 @@ export default class PlacesListPage extends Component {
             <PlacesContext.Consumer>
                 {(context) => {
                     return (<section>
-                        <ListControls updateTypeFilter={this.updateTypeFilter} />
+                        <ListControls 
+                            updateTypeFilter={this.updateTypeFilter}
+                            updateHappyHour={this.updateHappyHour} 
+                        />
                         {error
                             ? <p className='red'>There was an error, try again</p>
                             : this.renderPlaces()}

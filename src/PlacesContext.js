@@ -35,8 +35,8 @@ export class PlacesListProvider extends Component {
     }
     
     setPlaces = places => {
-        (typeof(places) !== Array)
-        ? console.log(typeof(places))
+        (Array.isArray(places))
+        ? console.log('places is not an array')
         : this.setState({ places })
     }
 

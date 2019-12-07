@@ -19,7 +19,11 @@ class ListControls extends Component {
                 
                 <div id="happy-hour-control">
                     <label htmlFor="happy-hour">Happy Hour</label>
-                    <input type="checkbox" />
+                    <input 
+                        id="hh-filter"
+                        type="checkbox" 
+                        onChange={() => this.props.updateHappyHour(document.getElementById('hh-filter').checked)} 
+                    />
                 </div>
             </div>
         )
