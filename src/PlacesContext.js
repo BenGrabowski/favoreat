@@ -35,7 +35,9 @@ export class PlacesListProvider extends Component {
     }
     
     setPlaces = places => {
-        this.setState({ places })
+        (typeof(places) !== Array)
+        ? console.log(typeof(places))
+        : this.setState({ places })
     }
 
     // setAddingItem = status => {

@@ -10,8 +10,8 @@ export default class PlacesListPage extends Component {
     static contextType = PlacesContext
 
     state = {
-        places: this.context.places,
-        sortType: 'All'
+        // places: this.context.places,
+        sortType: 'all'
     }
     
     componentDidMount() {
@@ -20,7 +20,12 @@ export default class PlacesListPage extends Component {
         console.log(user_id)
         console.log('PlacesListPage mounted')
         PlacesApiService.getPlaces(user_id)
-            .then(this.context.setPlaces)
+            .then(res => {
+                    console.log(res)
+                    console.log(typeof(res))
+                    this.context.setPlaces(res)
+                }
+            )
             .catch(this.context.setError)
     }
 
@@ -35,9 +40,17 @@ export default class PlacesListPage extends Component {
     }
 
     renderPlaces() {
-        const { places = [] } = this.context
+        // const { places = [] } = this.context
         // const { places } = this.context
+        let places
+        
+        if (this.state.sortType === 'all') {
+            places = this.context.places
+        } else {
+            places = this.context.places.filter(place => place.type === this.state.sortType)
+        }
         console.log(places)
+        console.log(this.context.places)
 
         return places.map(place =>
             <Place
@@ -61,7 +74,7 @@ export default class PlacesListPage extends Component {
             <PlacesContext.Consumer>
                 {(context) => {
                     return (<section>
-                        <ListControls />
+                        <ListControls updateTypeFilter={this.updateTypeFilter} />
                         {error
                             ? <p className='red'>There was an error, try again</p>
                             : this.renderPlaces()}
