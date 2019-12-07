@@ -29,9 +29,13 @@ class Place extends Component {
             user_id,
             this.props.id
         )
-            .then(() => {
+        .then(() => {
+            const newPlaces = PlacesApiService.getPlaces()
+            this.context.setPlaces(newPlaces)
+        })    
+        .then(() => {
                     this.props.history.push('/places')
-                    this.props.rerenderList()
+                    // this.props.rerenderList()
                 }
             )
     }

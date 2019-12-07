@@ -13,7 +13,7 @@ class AddPlace extends Component {
     state = {
         isAddingItem: false,
         place_name: '',
-        type: '',
+        type: 'restaurant',
         hh: 'no',
         hh_start: '',
         hh_end: '',

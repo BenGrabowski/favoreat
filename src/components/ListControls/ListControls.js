@@ -8,6 +8,7 @@ class ListControls extends Component {
                 <div id="type-control">
                     <label htmlFor="type">Type:</label>
                     <select name="type">
+                        <option value="all">All</option>
                         <option value="restaurant">Restaurant</option>
                         <option value="bar">Bar</option>
                         <option value="brewery">Brewery</option>

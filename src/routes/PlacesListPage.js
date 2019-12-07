@@ -10,7 +10,8 @@ export default class PlacesListPage extends Component {
     static contextType = PlacesContext
 
     state = {
-        places: this.context.places
+        places: this.context.places,
+        sortType: 'All'
     }
     
     componentDidMount() {
@@ -23,12 +24,21 @@ export default class PlacesListPage extends Component {
             .catch(this.context.setError)
     }
 
-    rerenderList = () => {
-        this.setState({ places: this.state.places })
+    // rerenderList = () => {
+    //     this.setState({ places: this.state.places })
+    // }
+
+    updateTypeFilter = event => {
+        this.setState({
+            sortType: event.target.value
+        })
     }
 
     renderPlaces() {
         const { places = [] } = this.context
+        // const { places } = this.context
+        console.log(places)
+
         return places.map(place =>
             <Place
                 key={place.id}
