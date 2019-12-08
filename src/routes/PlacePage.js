@@ -6,10 +6,6 @@ import PlacesApiService from '../services/places-api-service'
 
 class PlacePage extends Component {
     static contextType = PlacesContext
-
-    // state = {
-    //     error: this.context.error
-    // }
     
     componentDidMount() {
         console.log(this.props.match.params.id)
@@ -19,7 +15,7 @@ class PlacePage extends Component {
             this.context.user_id
         )
             .then(place => this.context.setSelectedPlace(place))
-            .then(console.log(this.context.selectedPlace))
+            .then(this.context.setFetching(false))
             .catch(this.context.setError)
     }
 
@@ -28,31 +24,16 @@ class PlacePage extends Component {
     }
     
     render() {
-        // const place = this.context.selectedPlace 
-
         return (
             <PlacesContext.Consumer>
                 {(context) => {
-                    // return (
-                    //     (context.selectedPlace === undefined)
-                    //     ? <h2>Loading selected place...</h2>
-                    //     : <Place 
-                    //         id={context.selectedPlace.id}
-                    //         name={context.selectedPlace.place_name}
-                    //         type={context.selectedPlace.type}
-                    //         notes={context.selectedPlace.notes}
-                    //         hh={context.selectedPlace.hh}
-                    //         hh_start={context.selectedPlace.hh_start}
-                    //         hh_end={context.selectedPlace.hh_end}
-                    //         items={context.selectedPlace.items}
-                    //     />
-                    // )
-                    if (context.error) {
-                        return <h2>Place Not Found</h2>
+                    if (context.isFetching) {
+                        return <h2>Loading...</h2>
                     } else if (context.selectedPlace === undefined) {
-                        return <h2>Loading Selected Place...</h2>
+                        return <h2>Place Not Found</h2>
                     } else {
                         return (
+                            <>
                             <Place 
                                 id={context.selectedPlace.id}
                                 name={context.selectedPlace.place_name}
@@ -63,6 +44,10 @@ class PlacePage extends Component {
                                 hh_end={context.selectedPlace.hh_end}
                                 items={context.selectedPlace.items}
                             />
+                            <button onClick={() => this.props.history.push('/places')}>
+                                Go Back
+                            </button>
+                            </>
                         )
                     }
                 }}

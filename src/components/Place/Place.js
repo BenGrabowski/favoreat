@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import './Place.css'
-import PlacesContext from '../../PlacesContext';
-import PlacesApiService from '../../services/places-api-service';
-import TokenService from '../../services/token-service';
+import PlacesContext from '../../PlacesContext'
+import PlacesApiService from '../../services/places-api-service'
+import TokenService from '../../services/token-service'
+// import date from 'date-and-time'
+import moment from 'moment'
 
 class Place extends Component {
     static contextType = PlacesContext
@@ -15,12 +17,9 @@ class Place extends Component {
 
     renderHappyHour() {
         const hh = this.props.hh
-        // return (hh === "no")
-        // ? ''
-        // : <div>
-        //     <p className="hh">Happy Hour:</p>
-        //     <p className="hh">{`${this.props.hh_start} - ${this.props.hh_end}`}</p>
-        // </div>
+        // const hh_start = date.parse('16:00:00', 'h:mm A')
+        const hh_start = moment('16:00:00', 'h:mm a')
+        console.log(hh_start)
         return (hh)
         ? <div>
         <p className="hh">Happy Hour:</p>
@@ -40,13 +39,8 @@ class Place extends Component {
                 PlacesApiService.getPlaces(user_id)
             this.context.setPlaces(newPlaces)
                 console.log(newPlaces)
-                // this.context.setPlaces(newPlaces)
         })    
-        .then(() => {
-                    this.props.history.push('/places')
-                    // this.props.rerenderList()
-                }
-            )
+        .then(() => this.props.history.push('/places'))
     }
     
     render() {            
@@ -61,7 +55,7 @@ class Place extends Component {
                 <Link 
                     to={`places/${this.props.id}`}
                     className="place-name"
-                    // onClick={this.handlePlaceClick}
+                    onClick={() => this.context.setFetching(true)}
                 >
                     {this.props.name}
                 </Link>
@@ -69,12 +63,10 @@ class Place extends Component {
                 <h3 className="place-type">{this.props.type}</h3>
                 
                 <div id="hh-box">
-                    {/* {happyHour} */}
                     {this.renderHappyHour()}
                 </div>
                 
                 <div id="notes">
-                    {/* {notes} */}
                     {this.renderNotes()}
                 </div>
 

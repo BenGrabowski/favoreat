@@ -7,6 +7,7 @@ const PlacesContext = React.createContext({
     error: null,
     selectedPlace: undefined,
     loggedIn: false,
+    isFetching: false,
     // isAddingItem: false,
     // setAddingItem: () => {},
     updatePlace: () => {},
@@ -27,6 +28,7 @@ export class PlacesListProvider extends Component {
         selectedPlace: undefined,
         error: null,
         isAddingItem: false,
+        isFetching: false,
     }
 
     setUserId = id => {
@@ -46,6 +48,12 @@ export class PlacesListProvider extends Component {
 
     setSelectedPlace = place => {
         this.setState({ selectedPlace: place })
+    }
+    
+    setFetching = status => {
+        this.setState({
+            isFetching: status
+        })
     }
       
     updatePlace = () => {}
@@ -80,6 +88,8 @@ export class PlacesListProvider extends Component {
             setError: this.setError,
             setSelectedPlace: this.setSelectedPlace,
             clearError: this.clearError,
+            isFetching: this.isFetching,
+            setFetching: this.setFetching,
             // isAddingItem: this.state.isAddingItem,
             // setAddingItem: this.setAddingItem,
         }
