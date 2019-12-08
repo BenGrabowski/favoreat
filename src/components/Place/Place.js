@@ -4,7 +4,6 @@ import './Place.css'
 import PlacesContext from '../../PlacesContext'
 import PlacesApiService from '../../services/places-api-service'
 import TokenService from '../../services/token-service'
-// import date from 'date-and-time'
 import moment from 'moment'
 
 class Place extends Component {
@@ -17,13 +16,13 @@ class Place extends Component {
 
     renderHappyHour() {
         const hh = this.props.hh
-        // const hh_start = date.parse('16:00:00', 'h:mm A')
-        const hh_start = moment('16:00:00', 'h:mm a')
-        console.log(hh_start)
+        const hh_start = moment(this.props.hh_start, 'hh:mm:ss').format('h:mm A')
+        const hh_end = moment(this.props.hh_end, 'hh:mm:ss').format('h:mm A')
+
         return (hh)
         ? <div>
         <p className="hh">Happy Hour:</p>
-        <p className="hh">{`${this.props.hh_start} - ${this.props.hh_end}`}</p>
+        <p className="hh">{`${hh_start} - ${hh_end}`}</p>
         </div>
         : ''
     }
