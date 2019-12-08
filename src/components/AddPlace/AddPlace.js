@@ -13,8 +13,9 @@ class AddPlace extends Component {
     state = {
         isAddingItem: false,
         place_name: '',
-        type: 'restaurant',
-        hh: 'no',
+        type: 'Restaurant',
+        // hh: 'no',
+        hh: false,
         hh_start: '',
         hh_end: '',
         notes: '',
@@ -145,21 +146,23 @@ class AddPlace extends Component {
                         name="type"
                         onChange={event => this.updateType(event)}
                     >
-                        <option value="restaurant">Restaurant</option>
-                        <option value="bar">Bar</option>
-                        <option value="brewery">Brewery</option>
-                        <option value="winery">Winery</option>
+                        <option value="Restaurant">Restaurant</option>
+                        <option value="Bar">Bar</option>
+                        <option value="Brewery">Brewery</option>
+                        <option value="Winery">Winery</option>
+                        <option value="Coffee Shop">Coffee Shop</option>
                     </select>
 
                     <div id="happy-hour-container">
                         <label htmlFor="hh">Happy Hour</label>
                         <select onChange={event => this.updateHappyHour(event)}>
-                            <option value="no">No</option>
-                            <option value="yes">Yes</option>
+                            <option value={false}>No</option>
+                            <option value={true}>Yes</option>
                         </select>
                         <br />
                         {
-                            (this.state.hh === 'yes') 
+                            // (this.state.hh === 'yes') 
+                            (this.state.hh)
                             ? this.renderHhStartEnd() 
                             : null
                         }

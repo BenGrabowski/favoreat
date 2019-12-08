@@ -15,12 +15,18 @@ class Place extends Component {
 
     renderHappyHour() {
         const hh = this.props.hh
-        return (hh === "no")
-        ? ''
-        : <div>
-            <p className="hh">Happy Hour:</p>
-            <p className="hh">{`${this.props.hh_start} - ${this.props.hh_end}`}</p>
+        // return (hh === "no")
+        // ? ''
+        // : <div>
+        //     <p className="hh">Happy Hour:</p>
+        //     <p className="hh">{`${this.props.hh_start} - ${this.props.hh_end}`}</p>
+        // </div>
+        return (hh)
+        ? <div>
+        <p className="hh">Happy Hour:</p>
+        <p className="hh">{`${this.props.hh_start} - ${this.props.hh_end}`}</p>
         </div>
+        : ''
     }
 
     deletePlace = () => {
@@ -29,9 +35,12 @@ class Place extends Component {
             user_id,
             this.props.id
         )
-        .then(() => {
-            const newPlaces = PlacesApiService.getPlaces()
+        .then(async () => {
+            const newPlaces = await
+                PlacesApiService.getPlaces(user_id)
             this.context.setPlaces(newPlaces)
+                console.log(newPlaces)
+                // this.context.setPlaces(newPlaces)
         })    
         .then(() => {
                     this.props.history.push('/places')

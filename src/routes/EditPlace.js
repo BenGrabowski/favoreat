@@ -185,10 +185,11 @@ class EditPlace extends Component {
                         value={type}
                         onChange={event => this.updateType(event)}
                     >
-                        <option value="restaurant">Restaurant</option>
-                        <option value="bar">Bar</option>
-                        <option value="brewery">Brewery</option>
-                        <option value="winery">Winery</option>
+                        <option value="Restaurant">Restaurant</option>
+                        <option value="Bar">Bar</option>
+                        <option value="Brewery">Brewery</option>
+                        <option value="Winery">Winery</option>
+                        <option value="Coffee Shop">Coffee Shop</option>
                     </select>
 
                     <div id="happy-hour-container">
@@ -197,8 +198,8 @@ class EditPlace extends Component {
                             value={hh}
                             onChange={event => this.updateHappyHour(event)}
                         >
-                            <option value="no">No</option>
-                            <option value="yes">Yes</option>
+                            <option value={false}>No</option>
+                            <option value={true}>Yes</option>
                         </select>
                         <br />
                         {

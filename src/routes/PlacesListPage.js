@@ -10,7 +10,7 @@ export default class PlacesListPage extends Component {
     static contextType = PlacesContext
 
     state = {
-        // places: this.context.places,
+        places: this.context.places,
         sortType: 'all',
         happyHour: false
     }

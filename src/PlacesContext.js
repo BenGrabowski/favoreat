@@ -36,8 +36,8 @@ export class PlacesListProvider extends Component {
     
     setPlaces = places => {
         (Array.isArray(places))
-        ? console.log('places is not an array')
-        : this.setState({ places })
+        ? this.setState({ places })
+        : console.log('places is not an array')
     }
 
     // setAddingItem = status => {

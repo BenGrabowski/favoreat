@@ -9,11 +9,11 @@ class ListControls extends Component {
                     <label htmlFor="type">Type:</label>
                     <select name="type" onChange={event => this.props.updateTypeFilter(event)}>
                         <option value="all">All</option>
-                        <option value="restaurant">Restaurant</option>
-                        <option value="bar">Bar</option>
-                        <option value="brewery">Brewery</option>
-                        <option value="winery">Winery</option>
-                        <option value="coffee-shope">Coffee Shop</option>
+                        <option value="Restaurant">Restaurant</option>
+                        <option value="Bar">Bar</option>
+                        <option value="Brewery">Brewery</option>
+                        <option value="Winery">Winery</option>
+                        <option value="Coffee Shop">Coffee Shop</option>
                     </select>
                 </div>
                 
