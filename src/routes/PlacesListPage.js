@@ -18,12 +18,8 @@ export default class PlacesListPage extends Component {
     componentDidMount() {
         this.context.clearError()
         const user_id = TokenService.getUserId()
-        console.log(user_id)
-        console.log('PlacesListPage mounted')
         PlacesApiService.getPlaces(user_id)
             .then(res => {
-                    console.log(res)
-                    // console.log(typeof(res))
                     this.context.setPlaces(res)
                 }
             )

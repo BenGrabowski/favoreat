@@ -27,10 +27,6 @@ class LoginForm extends Component {
                 password.value = ''
                 TokenService.saveAuthToken(res.authToken)
                 TokenService.saveUserId(res.user_id)
-                console.log(res.authToken)
-                console.log(res.user_id)
-                console.log(res)
-                // this.context.setUserId(res.user_id)
                 this.props.onLoginSuccess(res.user_id)
             })
             .catch(res => {

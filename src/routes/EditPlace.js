@@ -38,7 +38,7 @@ class EditPlace extends Component {
                         hh_start: place.hh_start,
                         hh_end: place.hh_end,
                         notes: place.notes,
-                        items: place.items
+                        items: place.items || []
                     })
                 }   
             )
@@ -50,7 +50,6 @@ class EditPlace extends Component {
         //PATCH request here
         const user_id = TokenService.getUserId()
         const placeId = this.props.match.params.id
-        console.log(placeId)
         const { place_name, type, hh, hh_start, hh_end, notes, items } = this.state
         const { history } = this.props
         const newPlace = {
@@ -69,7 +68,6 @@ class EditPlace extends Component {
     }
 
     handleAddItem = item => {
-        console.log(item)
         this.setState({
             items: this.state.items.concat( [item ] ),
             isAddingItem: false

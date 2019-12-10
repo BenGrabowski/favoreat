@@ -37,7 +37,6 @@ class Place extends Component {
             const newPlaces = await
                 PlacesApiService.getPlaces(user_id)
             this.context.setPlaces(newPlaces)
-                console.log(newPlaces)
         })    
         .then(() => this.props.history.push('/places'))
     }

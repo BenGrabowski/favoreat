@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import { Link } from 'react-router-dom'
 import PlacesContext from '../PlacesContext'
 import Place from '../components/Place/Place'
 import PlacesApiService from '../services/places-api-service'
@@ -8,7 +7,6 @@ class PlacePage extends Component {
     static contextType = PlacesContext
     
     componentDidMount() {
-        console.log(this.props.match.params.id)
         this.context.clearError()
         PlacesApiService.getPlace(
             this.props.match.params.id,

@@ -14,7 +14,6 @@ class AddPlace extends Component {
         isAddingItem: false,
         place_name: '',
         type: 'Restaurant',
-        // hh: 'no',
         hh: false,
         hh_start: '',
         hh_end: '',
@@ -68,7 +67,6 @@ class AddPlace extends Component {
     }
 
     handleAddItem = item => {
-        console.log(item)
         this.setState({
             items: this.state.items.concat( [item ] ),
             isAddingItem: false
@@ -161,7 +159,6 @@ class AddPlace extends Component {
                         </select>
                         <br />
                         {
-                            // (this.state.hh === 'yes') 
                             (this.state.hh)
                             ? this.renderHhStartEnd() 
                             : null
