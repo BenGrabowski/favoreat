@@ -30,10 +30,6 @@ export default class PlacesListPage extends Component {
             .catch(this.context.setError)
     }
 
-    // rerenderList = () => {
-    //     this.setState({ places: this.state.places })
-    // }
-
     updateTypeFilter = event => {
         this.setState({
             sortType: event.target.value
@@ -41,18 +37,12 @@ export default class PlacesListPage extends Component {
     }
 
     updateHappyHour = checked => {
-        console.log(checked)
         this.setState({
             happyHour: checked
         })
-        // this.setState({
-        //     happyHour: event.target.value
-        // })
     }
 
     renderPlaces() {
-        // const { places = [] } = this.context
-        // const { places } = this.context
         let places
         
         if (this.state.sortType === 'all') {
@@ -68,8 +58,6 @@ export default class PlacesListPage extends Component {
                 places = this.context.places.filter(place => place.type === this.state.sortType && place.hh)                
             }
         }
-        console.log(places)
-        console.log(this.context.places)
 
         return places && places.map(place =>
             <Place
