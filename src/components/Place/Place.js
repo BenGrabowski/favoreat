@@ -76,10 +76,14 @@ class Place extends Component {
                 </div>
                 <Link
                     to={`/places/${this.props.id}/edit`}
+                    class="edit-delete"
                 >
                     Edit
                 </Link>
-                <button onClick={this.deletePlace}>
+                <button 
+                    onClick={this.deletePlace}
+                    class="edit-delete"
+                >
                     Delete
                 </button>
             </section>
