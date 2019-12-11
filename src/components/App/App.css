@@ -37,3 +37,9 @@
 input, textarea {
   color: black;
 }
+
+@media screen and (max-width: 400px) {
+  .App_main {
+    margin-top: 180px;
+  }
+}
