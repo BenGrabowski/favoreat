@@ -5,6 +5,7 @@ import PlacesContext from '../PlacesContext'
 import PlacesApiService from '../services/places-api-service';
 import ListControls from '../components/ListControls/ListControls';
 import TokenService from '../services/token-service';
+import '../components/PlacesList/PlacesList.css';
 
 export default class PlacesListPage extends Component {
     static contextType = PlacesContext
@@ -76,7 +77,7 @@ export default class PlacesListPage extends Component {
         return (
             <PlacesContext.Consumer>
                 {(context) => {
-                    return (<section>
+                    return (<section className="places-list-page">
                         <ListControls 
                             updateTypeFilter={this.updateTypeFilter}
                             updateHappyHour={this.updateHappyHour} 
@@ -86,7 +87,7 @@ export default class PlacesListPage extends Component {
                             : this.renderPlaces()}
                         <Link 
                             to='/add-place'
-                            className="add-place"
+                            className="add-place-button"
                         >
                             Add Place
                         </Link>

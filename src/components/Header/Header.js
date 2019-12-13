@@ -21,6 +21,13 @@ class Header extends Component {
     renderLogoutLink() {
         return (
             <div className='logged-in'>
+                <Link 
+                    to={'/places'}
+                    id="places-link"
+                >
+                    Places
+                </Link>
+                
                 <Link
                     onClick={this.handleLogoutClick}
                     to={'/'}>

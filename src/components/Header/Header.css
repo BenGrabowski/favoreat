@@ -6,9 +6,10 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    background: black;
-    /* border-bottom: 5px solid white; */
-    height: 100px;
+    /* background: rgb(1, 131, 170); */
+    background: rgb(1, 17, 58);
+    border-bottom: 5px solid white;
+    height: 120px;
 }
 
 .justify-start {
@@ -26,10 +27,14 @@ a {
     text-decoration: none;
 }
 
+#places-link {
+    margin-right: 10px;
+}
+
 #demo-button {
-    border: 1px solid white;
+    border: 2px solid white;
+    border-radius: 10px;
     padding: 5px;
-    background: black;
     /* font-family: 'Fauna One', serif; */
     font-family: 'Open Sans', sans-serif;
     margin-right: 5px;
@@ -39,7 +44,7 @@ a {
 h1 {
     /* font-family: 'Playfair Display', serif; */
     font-family: 'Oleo Script', cursive;
-    font-size: 36px;
+    font-size: 50px;
     margin: 0;
   }
 

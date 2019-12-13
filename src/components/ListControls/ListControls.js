@@ -6,7 +6,7 @@ class ListControls extends Component {
         return (
             <div id="list-controls">
                 <div id="type-control">
-                    <label htmlFor="type">Type:</label>
+                    <label htmlFor="type" className="control-label">Type:</label>
                     <select name="type" onChange={event => this.props.updateTypeFilter(event)}>
                         <option value="all">All</option>
                         <option value="Restaurant">Restaurant</option>
@@ -18,7 +18,7 @@ class ListControls extends Component {
                 </div>
                 
                 <div id="happy-hour-control">
-                    <label htmlFor="happy-hour">Happy Hour</label>
+                    <label htmlFor="happy-hour" className="control-label">Happy Hour</label>
                     <input 
                         id="hh-filter"
                         type="checkbox" 

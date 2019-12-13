@@ -44,7 +44,12 @@ class RegistrationForm extends Component {
                         <label htmlFor="password">Password:</label>
                         <input type="password" name='password' id='password' />
                         </div>
-                    <button type='submit'>Sign Up</button>
+                    <button 
+                        type='submit'
+                        className='register-button'
+                    >
+                        Sign Up
+                    </button>
                 </form>
         </section>
         );

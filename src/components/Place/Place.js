@@ -74,18 +74,21 @@ class Place extends Component {
                         {items}
                     </ul>
                 </div>
-                <Link
-                    to={`/places/${this.props.id}/edit`}
-                    className="edit-delete"
-                >
-                    Edit
-                </Link>
-                <button 
-                    onClick={this.deletePlace}
-                    className="edit-delete"
-                >
-                    Delete
-                </button>
+                
+                <div className="place-controls">
+                    <Link
+                        to={`/places/${this.props.id}/edit`}
+                        className="edit-delete"
+                    >
+                        Edit
+                    </Link>
+                    <button 
+                        onClick={this.deletePlace}
+                        className="edit-delete"
+                    >
+                        Delete
+                    </button>
+                </div>
             </section>
         )
     }

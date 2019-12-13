@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import './AddPlace.scss'
+import './AddPlace.css'
 import PlacesApiService from '../../services/places-api-service';
 import PlacesContext from '../../PlacesContext';
 import AddItem from '../AddItem/AddItem'
 import TokenService from '../../services/token-service';
-import MenuItem from '../MenuItem';
+import MenuItem from '../MenuItem/MenuItem';
 
 class AddPlace extends Component {
     static contextType = PlacesContext
@@ -121,43 +121,46 @@ class AddPlace extends Component {
     render() {
         return (
             <>
-            <header id="add-place-header">
-                <h2 id="add-place-title">Add a New Place</h2>
+            <header className="add-place-header">
+                <h2 className="add-place-title">Add a New Place</h2>
             </header>
             
-            <section id="add-place">
+            <section className="add-place">
                 <form 
-                    id="add-place-form"
+                    className="add-place-form"
                     onSubmit={event => this.handleAddPlace(event)}
                 >
-                    <label htmlFor="place_name">Name:</label>
-                    <input 
-                        type="text" 
-                        name="place_name" 
-                        id="place_name" 
-                        onChange={event => this.updatePlaceName(event)}
-                        required 
-                    />
-                    <br />
-                    <label htmlFor="type">Type:</label>
-                    <select 
-                        name="type"
-                        onChange={event => this.updateType(event)}
-                    >
-                        <option value="Restaurant">Restaurant</option>
-                        <option value="Bar">Bar</option>
-                        <option value="Brewery">Brewery</option>
-                        <option value="Winery">Winery</option>
-                        <option value="Coffee Shop">Coffee Shop</option>
-                    </select>
+                    <div className="place-input">
+                        <label htmlFor="place_name">Name:</label>
+                        <input 
+                            type="text" 
+                            name="place_name" 
+                            className="place_name" 
+                            onChange={event => this.updatePlaceName(event)}
+                            required 
+                        />
+                    </div>
 
-                    <div id="happy-hour-container">
+                    <div className="place-input">
+                        <label htmlFor="type">Type:</label>
+                        <select 
+                            name="type"
+                            onChange={event => this.updateType(event)}
+                        >
+                            <option value="Restaurant">Restaurant</option>
+                            <option value="Bar">Bar</option>
+                            <option value="Brewery">Brewery</option>
+                            <option value="Winery">Winery</option>
+                            <option value="Coffee Shop">Coffee Shop</option>
+                        </select>
+                    </div>
+
+                    <div className="happy-hour-container">
                         <label htmlFor="hh">Happy Hour</label>
                         <select onChange={event => this.updateHappyHour(event)}>
                             <option value={false}>No</option>
                             <option value={true}>Yes</option>
                         </select>
-                        <br />
                         {
                             (this.state.hh)
                             ? this.renderHhStartEnd() 
@@ -165,34 +168,48 @@ class AddPlace extends Component {
                         }
                     </div>
                     
-                    <div id="notes">
+                    <div className="notes">
                         <label htmlFor="notes">Notes:</label>
                         <br />
                         <textarea 
                             name="notes" 
-                            id="notes" 
+                            className="place-notes" 
                             rows="10"
                             onChange={event => this.updateNotes(event)}
                         ></textarea>
                     </div>
                         
-                    <ul>
-                        {this.renderItemList()}
-                    </ul>
-                    <button onClick={event => this.renderItemInput(event)}>
-                        Add Menu Item
+                    <div className="items">
+                        {/* <ul>
+                            {this.renderItemList()}
+                        </ul> */}
+                        <button 
+                            onClick={event => this.renderItemInput(event)}
+                            className="add-item"
+                        >
+                            Add Item
+                        </button>
+                        {this.state.isAddingItem 
+                            ? <AddItem handleAddItem={this.handleAddItem} /> 
+                            : null 
+                        }
+                        <ul>
+                            {this.renderItemList()}
+                        </ul>
+                    </div>
+                    
+                    <button 
+                        type='submit'
+                        className='save-place'
+                    >
+                        Save
                     </button>
-                    {this.state.isAddingItem 
-                        ? <AddItem handleAddItem={this.handleAddItem} /> 
-                        : null 
-                    }
-                    <br />
-                    <button type='submit'>Save</button>
                 </form>
                 <Link 
-                    to='/places' 
+                    to='/places'
+                    className="go-back" 
                 >
-                    Go Back
+                    Back
                 </Link>
             </section>
             </>

@@ -42,7 +42,10 @@ class PlacePage extends Component {
                                 hh_end={context.selectedPlace.hh_end}
                                 items={context.selectedPlace.items}
                             />
-                            <button onClick={() => this.props.history.push('/places')}>
+                            <button 
+                                onClick={() => this.props.history.push('/places')}
+                                className="go-back"
+                            >
                                 Go Back
                             </button>
                             </>

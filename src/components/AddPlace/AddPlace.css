@@ -1,0 +1,66 @@
+.notes {
+    width: 100%;
+}
+
+.place-notes {
+    width: 100%;
+    border-radius: 7px;
+}
+
+.add-place {
+    width: 50%;
+    /* font-family: 'Fauna One', serif; */
+    font-family: 'Open Sans', sans-serif;
+    background: rgb(1, 17, 58);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
+
+.add-place-title {
+    /* font-family: 'Fauna One', serif; */
+    font-family: 'Oleo Script', cursive;
+    font-size: 40px;
+}
+
+.add-place-header {
+    padding: 0px;
+}
+
+.add-place-form {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.save-place {
+    align-self: center;
+    margin-top: 20px;
+    color: black;
+    width: 75px;
+    height: 25px;
+}
+
+.place_name {
+    width: 50%;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 7px;
+}
+
+.add-item {
+    width: 90px;
+}
+
+label {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.items {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

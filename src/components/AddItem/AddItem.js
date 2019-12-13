@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './AddItem.css'
 
 class AddItem extends Component {
     state = {
@@ -27,6 +28,7 @@ class AddItem extends Component {
                 />
                 <button 
                     onClick={this.handleAddItem}
+                    className="save-item"
                 >
                     Save
                 </button>

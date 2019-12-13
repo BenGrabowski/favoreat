@@ -1,19 +1,37 @@
 * {
     box-sizing: border-box;
   }
+
+  html {
+    height: 100%;
+    background: url(../../images/orange.jpg) no-repeat center center fixed;
+  }
   
   body {
+    height: inherit;
     font-family: "Open Sans",
     sans-serif; 
     font-size: 20px;
     color: white;
     line-height: 1.5;
-    background: url(../../images/favoreat-background-5.jpg) no-repeat center center fixed;
     background-size: cover;
   }
 
+  #root {
+    height: inherit;
+  }
+
+  .App {
+    height: inherit;
+  }
+
   .App_main {
+    height: inherit;
     margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
   }
   
   nav,
@@ -36,6 +54,16 @@
 
 input, textarea {
   color: black;
+}
+
+.go-back {
+  color: black;
+  width: 75px;
+  height: 25px;
+  background: white;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 15px;
 }
 
 @media screen and (max-width: 400px) {

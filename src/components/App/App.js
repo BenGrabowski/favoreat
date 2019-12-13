@@ -8,7 +8,7 @@ import LoginPage from '../../routes/LoginPage';
 import PlacesListPage from '../../routes/PlacesListPage'
 import AddPlace from '../AddPlace/AddPlace';
 import PlacePage from '../../routes/PlacePage';
-import EditPlace from '../../routes/EditPlace';
+import EditPlace from '../../components/EditPlace/EditPlace';
 import { PlacesListProvider } from '../../PlacesContext';
 import NotFoundPage from '../../routes/NotFoundPage';
 import '../../index.css';
