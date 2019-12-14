@@ -24,13 +24,16 @@ class Header extends Component {
                 <Link 
                     to={'/places'}
                     id="places-link"
+                    className="nav-link"
                 >
                     Places
                 </Link>
                 
                 <Link
                     onClick={this.handleLogoutClick}
-                    to={'/'}>
+                    to={'/'}
+                    className="nav-link log-out"
+                >
                     Log Out    
                 </Link>
             </div>
@@ -41,11 +44,15 @@ class Header extends Component {
         return (
             <div className='not-logged-in'>
                 <Link
-                    to='/login'>
+                    to='/login'
+                    className="nav-link"
+                >
                     Login
                 </Link>
                 <Link
-                    to='/register'>
+                    to='/register'
+                    className="nav-link"
+                >
                     Register
                 </Link>
             </div>
@@ -57,7 +64,7 @@ class Header extends Component {
             <nav className='Header'>
                 <Link 
                     to='/'
-                    className='justify-start'
+                    className='justify-start nav-link'
                 >
                     <h1>FavorEat</h1>                
                 </Link>
@@ -67,7 +74,11 @@ class Header extends Component {
                         : this.renderLoginLink()
                     }
                 </div>
-                <Link to='/places' id="demo-button">
+                <Link 
+                    to='/places' 
+                    // id="demo-button"
+                    className="nav-link"
+                >
                     Demo
                 </Link>
             </nav>

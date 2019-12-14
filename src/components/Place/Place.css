@@ -16,7 +16,8 @@
 }
 
 .place-section {
-    /* border: 5px solid white; */
+    border: 2px solid white;
+    border-radius: 10px;
     margin: 10px;
     max-width: 600px;
     width: 45%;
@@ -26,6 +27,7 @@
     background: rgb(1, 17, 58);
     display: flex;
     flex-direction: column;
+    font-family: 'Judson', serif;
 }
 
 #items-ordered {

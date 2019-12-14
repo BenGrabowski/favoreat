@@ -1,5 +1,5 @@
 #landing-hero {
-    background: url(../../images/orange.jpg) no-repeat center center fixed;
+    background: url(../../images/orange-red.jpg) no-repeat center center fixed;
     background-size: cover;
     width: 100%;
 }
@@ -28,15 +28,25 @@
 }
 
 .white > p {
-    color: rgb(255, 123, 0);
+    /* color: rgb(206, 47, 20); */
+    color: rgb(192, 14, 5);
+    /* align-self: flex-end; */
 }
 
 .blue-title {
-    color: navy;
+    color: rgb(1, 17, 58);
 }
 
-.orange-title {
-    color: rgb(255, 123, 0);
+.red-title {
+    /* color: rgb(206, 47, 20); */
+    color: rgb(192, 14, 5);
+}
+
+.red {
+    /* background: rgb(206, 47, 20); */
+    background: rgb(192, 14, 5);
+    display: flex;
+    flex-direction: column;
 }
 
 .blue {
@@ -46,32 +56,31 @@
     flex-direction: column;
 }
 
-.blue > p {
-    align-self: flex-start;
-}
-
 .orange {
     background: rgb(255, 123, 0);
     display: flex;
     flex-direction: column;
 }
 
-.orange > p {
-    color: navy;
-    align-self: flex-end;
+.red > p {
+    color: rgb(1, 17, 58);
+    /* align-self: flex-end; */
 }
 
 .info > h3 {
     /* text-align: center; */
-    font-size: 40px;
+    font-size: 45px;
     margin-bottom: 0;
+    font-weight: 700;
+    font-family: 'Judson', serif;
     font-weight: 700;
 }
 
 .info > p {
     font-size: 22px;
     max-width: 500px;
-    font-weight: bold;
+    /* font-weight: bold; */
+    font-family: 'Judson', serif;
 }
 
 .tagline {
@@ -87,7 +96,7 @@
     font-family: 'Oleo Script', cursive;
     font-size: 45px;
     margin-top: 0px;
-    color: navy;
+    color: rgb(1, 17, 58);
 }
 
 .landing-header {

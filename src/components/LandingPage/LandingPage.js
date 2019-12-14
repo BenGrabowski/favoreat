@@ -13,22 +13,22 @@ class LandingPage extends Component {
 
                 <div className='landing_sections'>
                     <section className="info white">
-                        <h3 className="blue-title">KEEP TRACK OF RESTAURANTS, BARS &amp; MORE</h3>
+                        <h3 className="blue-title">Keep Track of Restaurants, Bars &amp; More</h3>
                         <p>
                             Enter your favorite places to start, then add more as you find them!
                         </p>
                     </section>
                     
                     <section className="info blue">
-                        <h3 className="orange-title">CHOOSE THE PERFECT SPOT FOR ANY OCCASION</h3>
+                        <h3 className="red-title">Choose the Perfect Spot for Any Occasion</h3>
                         <p>
                             Filter your saved places by establishment type. Just looking to grab a drink?
                             Filter your list by "Bar". 
                         </p>
                     </section>    
                         
-                    <section className="info orange">
-                        <h3>TRACK PREVIOUS ORDERS</h3>
+                    <section className="info red">
+                        <h3>Track Previous Orders</h3>
                         <p>
                             FavorEat lets you store items you've previously ordered at each
                             bar or restauant so you won't forget.
