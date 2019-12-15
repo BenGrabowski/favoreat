@@ -19,6 +19,7 @@
     border: 2px solid white;
     border-radius: 10px;
     margin: 10px;
+    margin-top: 40px;
     max-width: 600px;
     width: 45%;
     min-width: 230px;
@@ -38,11 +39,17 @@
 
 #items-title {
     margin: 0;
+    text-decoration: underline;
 }
 
-#items-list {
+.items-list {
     margin: 0;
     margin-bottom: 15px;
+}
+
+.items-list > li {
+    list-style: none;
+    font-size: 16px;
 }
 
 section {
@@ -60,12 +67,16 @@ button:hover {
 .edit-delete {
     width: 75px;
     height: 25px;
-    border: 1px solid white;
+    /* border: 1px solid white; */
+    border-radius: 5px;
     text-align: center;
-    background: none;
+    /* background: none; */
+    background: white;
     margin: 5px;
     font-size: 16px;
     display: block;
+    font-family: 'Judson', serif;
+    color: navy;
 }
 
 .hh {

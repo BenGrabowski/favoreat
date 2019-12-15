@@ -74,13 +74,13 @@ class Header extends Component {
                         : this.renderLoginLink()
                     }
                 </div>
-                <Link 
+                {/* <Link 
                     to='/places' 
                     // id="demo-button"
                     className="nav-link"
                 >
                     Demo
-                </Link>
+                </Link> */}
             </nav>
         </>
     }

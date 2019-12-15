@@ -31,9 +31,9 @@ class RegistrationForm extends Component {
     render() {
         return (
             <section id="registration">
-                <h3>Start adding your FavorEats now!</h3>
+                <h3 className="login-header">Create an Account</h3>
                 <form 
-                    className='signup-form'
+                    className='login-form'
                     onSubmit={this.handleSubmit}
                 >
                     <div>

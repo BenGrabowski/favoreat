@@ -40,6 +40,10 @@ a {
     color: red;
 }
 
+.logged-in > a {
+    display: inline-block;
+}
+
 .logged-in > a:hover {
     transform: translateY(-3px);
 }
@@ -75,6 +79,12 @@ h1 {
   @media screen and (max-width: 400px) {
     #demo-button {
         margin-top: 10px;
+    }
+
+    .logged-in {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
 

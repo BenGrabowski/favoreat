@@ -1,5 +1,6 @@
 #landing-hero {
-    background: url(../../images/orange-red.jpg) no-repeat center center fixed;
+    /* background: url(../../images/orange-red.jpg) no-repeat center center fixed; */
+    background: url(../../images/restaurant-red-blur.jpg) no-repeat center center fixed;
     background-size: cover;
     width: 100%;
 }
@@ -94,9 +95,14 @@
 
 .sub-tagline {
     font-family: 'Oleo Script', cursive;
-    font-size: 45px;
+    font-size: 40px;
     margin-top: 0px;
     color: rgb(1, 17, 58);
+    max-width: 275px;
+    text-align: center;
+    background: white;
+    /* border: 3px solid navy; */
+    border-radius: 10px;
 }
 
 .landing-header {

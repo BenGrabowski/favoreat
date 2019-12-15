@@ -232,7 +232,7 @@ class EditPlace extends Component {
                             onClick={event => this.renderItemInput(event)}
                             className="add-item"
                         >
-                            Add Menu Item
+                            Add Item
                         </button>
 
                         <ul>

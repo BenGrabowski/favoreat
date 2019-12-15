@@ -70,7 +70,7 @@ class Place extends Component {
 
                 <div id="items-ordered">
                     <p id="items-title"><span>Items Ordered</span></p>
-                    <ul id="items-list">
+                    <ul className="items-list">
                         {items}
                     </ul>
                 </div>

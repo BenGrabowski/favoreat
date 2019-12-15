@@ -61,9 +61,12 @@ input, textarea {
   width: 75px;
   height: 25px;
   background: white;
-  font-size: 16px;
+  font-size: 14px;
   text-align: center;
   margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 @media screen and (max-width: 400px) {

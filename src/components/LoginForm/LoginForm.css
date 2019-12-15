@@ -5,6 +5,7 @@ label {
 .login-button {
     color: black;
     width: 75px;
+    height: 25px;
     margin-top: 15px;
 }
 
@@ -22,7 +23,7 @@ label {
 }
 
 .LoginPage {
-    margin-top: 100px;
+    /* margin-top: 100px; */
     /* width: 75%;
     height: 50%;
     background: rgb(1, 17, 58); */
