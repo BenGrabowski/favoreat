@@ -2,54 +2,54 @@
     box-sizing: border-box;
   }
 
-  html {
-    height: 100%;
-    background: url(../../images/orange-red.jpg) no-repeat center center fixed;
-  }
-  
-  body {
-    height: inherit;
-    font-family: "Open Sans",
-    sans-serif; 
-    font-size: 20px;
-    color: white;
-    line-height: 1.5;
-    background-size: cover;
-  }
+html {
+  height: 100%;
+  background: url(../../images/orange-red.jpg) no-repeat center center fixed;
+}
 
-  #root {
-    height: inherit;
-  }
+body {
+  height: inherit;
+  font-family: "Open Sans",
+  sans-serif; 
+  font-size: 20px;
+  color: white;
+  line-height: 1.5;
+  background-size: cover;
+}
 
-  .App {
-    height: inherit;
-  }
+#root {
+  height: inherit;
+}
 
-  .App_main {
-    height: inherit;
-    margin-top: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-  
-  nav,
-  footer {
-    padding: 1% 0;
-  }
-  
-  nav {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
-  }
+.App {
+  height: inherit;
+}
 
-  label {
-    color: white;
-    margin-right: 5px;
+.App_main {
+  height: inherit;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* nav,
+footer {
+  padding: 1% 0;
+} */
+
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+label {
+  color: white;
+  margin-right: 5px;
 }  
 
 input, textarea {
@@ -63,10 +63,12 @@ input, textarea {
   background: white;
   font-size: 14px;
   text-align: center;
-  margin-top: 15px;
+  /* margin-top: 15px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: 10px auto;
+  border-radius: 5px;
 }
 
 @media screen and (max-width: 400px) {
