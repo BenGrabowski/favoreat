@@ -21,7 +21,7 @@
     margin: 10px;
     margin-top: 40px;
     max-width: 600px;
-    min-height: 400px;
+    /* min-height: 400px; */
     width: 45%;
     min-width: 230px;
     align-items: center;

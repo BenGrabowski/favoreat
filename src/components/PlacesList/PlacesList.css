@@ -29,3 +29,10 @@
     /* background: url(../../images/orange.jpg) no-repeat center center fixed; */
     background-size: cover;
 }
+
+#items-ordered, .place-section {
+    /* align-items: center; */
+    /* display: flex;  */
+    /* flex-direction: column; */
+    text-align: center;
+}
