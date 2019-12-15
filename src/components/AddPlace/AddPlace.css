@@ -42,6 +42,7 @@
     height: 25px;
     font-size: 14px;
     border-radius: 5px;
+    background: white;
 }
 
 .place_name {
