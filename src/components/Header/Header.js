@@ -64,7 +64,7 @@ class Header extends Component {
             <nav className='Header'>
                 <Link 
                     to='/'
-                    className='justify-start nav-link'
+                    className='justify-start'
                 >
                     <h1>FavorEat</h1>                
                 </Link>

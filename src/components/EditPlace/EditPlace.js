@@ -136,6 +136,10 @@ class EditPlace extends Component {
         )
     }
 
+    // renderEmpty = () => {
+    //     return <></>
+    // }
+
     updatePlaceName = event => {
         this.setState({
             place_name: event.target.value
@@ -149,7 +153,8 @@ class EditPlace extends Component {
     }
 
     updateHappyHour = event => {
-        (event.target.value === 'yes')
+        // (event.target.value === 'yes')
+        (event.target.value)
         ? this.setState({ hh: event.target.value })
         : this.setState({
             hh: event.target.value,
@@ -208,9 +213,10 @@ class EditPlace extends Component {
                         </select>
                         <br />
                         {
-                            (this.state.hh === 'yes') 
+                            (this.state.hh) 
                             ? this.renderHhStartEnd() 
                             : null
+                            // : this.renderEmpty()
                         }
                     </div>
                     

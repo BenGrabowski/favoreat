@@ -46,7 +46,7 @@ class PlacePage extends Component {
                                 onClick={() => this.props.history.push('/places')}
                                 className="go-back"
                             >
-                                Go Back
+                                Back
                             </button>
                             </>
                         )

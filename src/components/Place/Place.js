@@ -11,7 +11,13 @@ class Place extends Component {
 
     renderNotes() {
         const notes = this.props.notes
-        return (!notes) ? '' : <p id="notes"><span>Notes:</span><br />{notes}</p>
+        return (!notes) 
+        ? '' 
+        : <div className="notes-container">
+            {/* <p id="notes"><span>Notes:</span><br />{notes}</p> */}
+            <h4 className="notes-title">Notes:</h4>
+            <p className="notes-content">{notes}</p>
+        </div>
     }
 
     renderHappyHour() {
@@ -26,6 +32,12 @@ class Place extends Component {
         </div>
         : ''
     }
+
+    // renderItems() {
+    //     const items = this.props.items
+    //     (items)
+    //     ? 
+    // }
 
     deletePlace = () => {
         const user_id = TokenService.getUserId()
@@ -48,6 +60,10 @@ class Place extends Component {
         })
         : ''
 
+        const itemHeader = (this.props.items)
+        ? <p className="item-header">Items Ordered</p>
+        : null
+
         return (
             <section className="place-section">
                 <Link 
@@ -69,7 +85,7 @@ class Place extends Component {
                 </div>
 
                 <div id="items-ordered">
-                    <p id="items-title"><span>Items Ordered</span></p>
+                   {itemHeader} 
                     <ul className="items-list">
                         {items}
                     </ul>

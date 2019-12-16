@@ -8,18 +8,13 @@
 }
 
 .add-place {
-    /* width: 50%; */
-    /* font-family: 'Fauna One', serif; */
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background: rgb(1, 17, 58);
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* align-items: center; */
     padding: 30px;
+    border-radius: 10px;
 }
 
 .add-place-title {
-    /* font-family: 'Fauna One', serif; */
     font-family: 'Oleo Script', cursive;
     font-size: 40px;
 }
@@ -31,7 +26,6 @@
 .add-place-form {
     display: flex;
     flex-direction: column;
-    /* width: 70%; */
 }
 
 .save-place {
@@ -43,10 +37,18 @@
     font-size: 14px;
     border-radius: 5px;
     background: white;
+    transition-property: background, color;
+    transition-duration: .2s;
+    transition-timing-function: linear;
+}
+
+.save-place:hover {
+    background: rgb(1, 17, 58);
+    color: white;
 }
 
 .place_name {
-    width: 50%;
+    /* width: 50%; */
     height: 30px;
     font-size: 20px;
     border-radius: 7px;
@@ -59,7 +61,7 @@
 label {
     font-size: 20px;
     font-weight: bold;
-    font-family: 'Judson', serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .items {
@@ -70,6 +72,6 @@ label {
 }
 
 .item {
-    font-family: 'Judson', serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
 }

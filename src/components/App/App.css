@@ -9,8 +9,6 @@ html {
 
 body {
   height: inherit;
-  font-family: "Open Sans",
-  sans-serif; 
   font-size: 20px;
   color: white;
   line-height: 1.5;
@@ -34,11 +32,6 @@ body {
   width: 100%;
 }
 
-/* nav,
-footer {
-  padding: 1% 0;
-} */
-
 nav {
   position: absolute;
   top: 0;
@@ -57,18 +50,24 @@ input, textarea {
 }
 
 .go-back {
-  color: black;
+  color: rgb(1, 17, 58);
   width: 75px;
   height: 25px;
   background: white;
   font-size: 14px;
   text-align: center;
-  /* margin-top: 15px; */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   margin: 10px auto;
+  border: 1px solid white;
   border-radius: 5px;
+  display: block;
+  transition-property: background, color;
+  transition-duration: .2s;
+  transition-timing-function: linear;
+}
+
+.go-back:hover {
+  background: rgb(1, 17, 58);
+  color: white;
 }
 
 @media screen and (max-width: 400px) {

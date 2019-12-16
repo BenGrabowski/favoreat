@@ -62,11 +62,11 @@ export default class PlacesListPage extends Component {
                 id={place.id}
                 name={place.place_name}
                 type={place.type}
-                notes={place.notes}
+                // notes={place.notes}
                 hh={place.hh}
                 hh_start={place.hh_start}
                 hh_end={place.hh_end}
-                items={place.items}
+                // items={place.items}
                 rerenderList={this.rerenderList}
             />   
         )

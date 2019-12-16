@@ -82,6 +82,12 @@ class AddPlace extends Component {
         })
     }
 
+    updateHappyHour = event => {
+        this.setState({
+            hh: event.target.value
+        })
+    }
+    
     updateHhStart = event => {
         this.setState({
             hh_start: event.target.value
@@ -109,12 +115,6 @@ class AddPlace extends Component {
     updateType = event => {
         this.setState({
             type: event.target.value
-        })
-    }
-
-    updateHappyHour = event => {
-        this.setState({
-            hh: event.target.value
         })
     }
     
@@ -164,7 +164,7 @@ class AddPlace extends Component {
                         {
                             (this.state.hh)
                             ? this.renderHhStartEnd() 
-                            : null
+                            : ''
                         }
                     </div>
                     
