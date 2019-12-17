@@ -52,15 +52,15 @@ class LoginForm extends Component {
                 >
                     <div>
                         <label htmlFor="user_name">Username:</label>
-                        <input type="text" name='user_name' id='user_name' />
+                        <input type="text" name='user_name' className="username" />
                     </div>
                     <div>
                         <label htmlFor="password">Password:</label>
-                        <input type="password" name='password' id='password' />
+                        <input type="password" name='password' className='password' />
                         </div>
                     <button 
                         type='submit'
-                        className='login-button'
+                        className='register-button'
                     >
                         Log In
                     </button>

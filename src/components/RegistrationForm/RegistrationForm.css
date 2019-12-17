@@ -1,6 +1,33 @@
 .register-button {
-    color: black;
-    width: 75px;
+    /* color: black; */
+    width: 100px;
     height: 25px;
     margin-top: 15px;
+    /* width: 75px; */
+    /* height: 25px; */
+    border-radius: 5px;
+    text-align: center;
+    background: white;
+    border: 1px solid white;
+    /* margin: 5px; */
+    font-size: 16px;
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: rgb(1, 17, 58);
+    /* margin: 5px auto; */
+    transition-property: background, color;
+    transition-duration: .2s;
+    transition-timing-function: linear;
+}
+
+.register-button:hover {
+    background: rgb(1, 17, 58);
+    color: white;
+}
+
+.username, .password {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    border-radius: 5px;
 }
