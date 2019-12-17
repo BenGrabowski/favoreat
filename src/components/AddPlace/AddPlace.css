@@ -5,6 +5,8 @@
 .place-notes {
     width: 100%;
     border-radius: 7px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
 }
 
 .add-place {
@@ -35,6 +37,7 @@
     width: 75px;
     height: 25px;
     font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
     border-radius: 5px;
     background: white;
     transition-property: background, color;
@@ -50,8 +53,9 @@
 .place_name {
     /* width: 50%; */
     height: 30px;
-    font-size: 20px;
+    font-size: 18px;
     border-radius: 7px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .add-item {

@@ -23,7 +23,8 @@ class AddItem extends Component {
                 <label htmlFor="item_name">Item: </label>
                 <input 
                     type="text" 
-                    name="item_name" 
+                    name="item_name"
+                    className="item_name" 
                     onChange={event => this.updateItem(event)}
                 />
                 <button 
