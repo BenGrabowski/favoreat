@@ -25,19 +25,13 @@ class Place extends Component {
         const hh_start = moment(this.props.hh_start, 'hh:mm:ss').format('h:mm A')
         const hh_end = moment(this.props.hh_end, 'hh:mm:ss').format('h:mm A')
 
-        return (hh)
+        return (hh === 'true')
         ? <div>
         <p className="hh">Happy Hour:</p>
         <p className="hh">{`${hh_start} - ${hh_end}`}</p>
         </div>
         : ''
     }
-
-    // renderItems() {
-    //     const items = this.props.items
-    //     (items)
-    //     ? 
-    // }
 
     deletePlace = () => {
         const user_id = TokenService.getUserId()

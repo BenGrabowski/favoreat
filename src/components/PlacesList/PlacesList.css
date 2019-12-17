@@ -17,6 +17,11 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+    transition: all .1s ease;
+}
+
+.add-place-button:hover {
+    width: 115px;
 }
 
 .places-list-page {

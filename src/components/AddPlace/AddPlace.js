@@ -162,7 +162,7 @@ class AddPlace extends Component {
                             <option value={true}>Yes</option>
                         </select>
                         {
-                            (this.state.hh)
+                            (this.state.hh === 'true')
                             ? this.renderHhStartEnd() 
                             : ''
                         }

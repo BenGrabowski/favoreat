@@ -136,10 +136,6 @@ class EditPlace extends Component {
         )
     }
 
-    // renderEmpty = () => {
-    //     return <></>
-    // }
-
     updatePlaceName = event => {
         this.setState({
             place_name: event.target.value
@@ -213,10 +209,9 @@ class EditPlace extends Component {
                         </select>
                         <br />
                         {
-                            (this.state.hh) 
+                            (this.state.hh === 'true') 
                             ? this.renderHhStartEnd() 
-                            : null
-                            // : this.renderEmpty()
+                            : ''
                         }
                     </div>
                     

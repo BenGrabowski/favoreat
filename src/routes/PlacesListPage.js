@@ -46,7 +46,7 @@ export default class PlacesListPage extends Component {
             if (!this.state.happyHour) {
                 places = this.context.places
             } else {
-                places = this.context.places.filter(place => place.hh)
+                places = this.context.places.filter(place => (place.hh === 'true'))
             }
         } else {
             if (!this.state.happyHour) {
