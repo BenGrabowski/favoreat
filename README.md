@@ -17,16 +17,16 @@ Link to Live App: https://favoreat.now.sh/
  </ul>
 
  ### Home Page
- ![Home Page](./src/images/home-page)
+ ![Home Page](./src/images/home-page.png)
 
  ### Places List
- ![Places List](./src/images/places-list)
+ ![Places List](./src/images/places-list.png)
 
  ### Place Page
- ![Place Page](./src/images/place-page)
+ ![Place Page](./src/images/place-page.png)
 
  ### Add Place
- ![Add Place](./src/images/add-place)
+ ![Add Place](./src/images/add-place.png)
 
  ### Registration
- ![Registeration](./src/images/register)
+ ![Registeration](./src/images/register.png)
