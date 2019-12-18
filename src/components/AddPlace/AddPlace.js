@@ -21,6 +21,10 @@ class AddPlace extends Component {
         items: []
     }
     
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
+    
     handleAddPlace = event => {
         event.preventDefault()
         const user_id = TokenService.getUserId()
@@ -180,9 +184,6 @@ class AddPlace extends Component {
                     </div>
                         
                     <div className="items">
-                        {/* <ul>
-                            {this.renderItemList()}
-                        </ul> */}
                         <button 
                             onClick={event => this.renderItemInput(event)}
                             className="add-item"

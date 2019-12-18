@@ -14,7 +14,6 @@ class Place extends Component {
         return (!notes) 
         ? '' 
         : <div className="notes-container">
-            {/* <p id="notes"><span>Notes:</span><br />{notes}</p> */}
             <h4 className="notes-title">Notes:</h4>
             <p className="notes-content">{notes}</p>
         </div>

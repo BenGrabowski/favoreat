@@ -7,6 +7,7 @@ class PlacePage extends Component {
     static contextType = PlacesContext
     
     componentDidMount() {
+        window.scrollTo(0, 0)
         this.context.clearError()
         PlacesApiService.getPlace(
             this.props.match.params.id,

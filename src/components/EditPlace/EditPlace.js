@@ -22,6 +22,7 @@ class EditPlace extends Component {
     static contextType = PlacesContext
     
     componentDidMount() {
+        window.scrollTo(0, 0)
         this.context.clearError()
         PlacesApiService.getPlace(
             this.props.match.params.id,
@@ -149,7 +150,6 @@ class EditPlace extends Component {
     }
 
     updateHappyHour = event => {
-        // (event.target.value === 'yes')
         (event.target.value)
         ? this.setState({ hh: event.target.value })
         : this.setState({
