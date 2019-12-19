@@ -52,7 +52,7 @@ export default class PlacesListPage extends Component {
             if (!this.state.happyHour) {
                 places = this.context.places.filter(place => place.type === this.state.sortType)
             } else {
-                places = this.context.places.filter(place => place.type === this.state.sortType && place.hh)                
+                places = this.context.places.filter(place => place.type === this.state.sortType && place.hh === 'true')                
             }
         }
 
