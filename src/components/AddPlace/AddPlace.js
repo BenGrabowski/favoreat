@@ -207,12 +207,6 @@ class AddPlace extends Component {
                         Save
                     </button>
                 </form>
-                {/* <Link 
-                    to='/places'
-                    className="go-back" 
-                >
-                    Back
-                </Link> */}
             </section>
             <Link 
                 to='/places'

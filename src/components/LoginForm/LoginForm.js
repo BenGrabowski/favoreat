@@ -36,7 +36,7 @@ class LoginForm extends Component {
 
     renderInvalidMessage = () => {
         return (
-            <p>invalid username or password</p>
+            <p className="invalid-login">invalid username or password</p>
         )
     }
     

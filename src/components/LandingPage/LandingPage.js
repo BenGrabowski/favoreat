@@ -4,7 +4,6 @@ import './LandingPage.css'
 class LandingPage extends Component {
     render() {
         return (
-            // <>
             <div id="landing-hero">
                 <header className="landing-header">
                     <h2 className="tagline">All Your <br />Favorite Places</h2>
@@ -50,7 +49,6 @@ class LandingPage extends Component {
                     </section>
                 </div>
             </div>
-            // </>
         );
     }
 }

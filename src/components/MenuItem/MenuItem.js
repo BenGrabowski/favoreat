@@ -11,7 +11,6 @@ class MenuItem extends Component {
                     onClick={event => this.props.removeItem(event, this.props.index)}
                     className="remove-item"
                 >
-                    {/* Remove */}
                     <FontAwesomeIcon icon="times-circle" className="remove-item-icon" />
                 </button>
             </div>

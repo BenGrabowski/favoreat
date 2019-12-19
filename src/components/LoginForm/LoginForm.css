@@ -23,3 +23,8 @@ label {
     text-align: center;
     color: white;
 }
+
+.invalid-login {
+    color: white;
+    text-align: center;
+}

@@ -50,7 +50,6 @@ class EditPlace extends Component {
     
     handleEditPlace = event => {
         event.preventDefault()
-        //PATCH request here
         const user_id = TokenService.getUserId()
         const placeId = this.props.match.params.id
         const { place_name, type, hh, hh_start, hh_end, notes, items } = this.state
