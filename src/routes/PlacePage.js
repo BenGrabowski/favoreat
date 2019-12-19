@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PlacesContext from '../PlacesContext'
 import Place from '../components/Place/Place'
 import PlacesApiService from '../services/places-api-service'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class PlacePage extends Component {
     static contextType = PlacesContext
@@ -47,7 +48,7 @@ class PlacePage extends Component {
                                 onClick={() => this.props.history.push('/places')}
                                 className="go-back"
                             >
-                                Back
+                                <FontAwesomeIcon icon="arrow-alt-circle-left" />
                             </button>
                             </>
                         )

@@ -19,6 +19,7 @@
 .add-place-title {
     font-family: 'Oleo Script', cursive;
     font-size: 40px;
+    color: white;
 }
 
 .add-place-header {
@@ -72,6 +73,7 @@ label {
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: white;
 }
 
 .item {

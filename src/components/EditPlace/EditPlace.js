@@ -6,6 +6,7 @@ import AddItem from '../AddItem/AddItem'
 import TokenService from '../../services/token-service'
 import MenuItem from '../MenuItem/MenuItem'
 import './EditPlace.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class EditPlace extends Component {
     state = {
@@ -253,13 +254,13 @@ class EditPlace extends Component {
                         Save
                     </button>
                 </form>
-                <Link 
-                    to='/places'
-                    className="go-back" 
-                >
-                    Back
-                </Link>
             </section>
+            <Link 
+                to='/places'
+                className="go-back" 
+            >
+                <FontAwesomeIcon icon="arrow-alt-circle-left" />
+            </Link>
             </>
         )
     }

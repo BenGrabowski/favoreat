@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import './AddPlace.css'
-import PlacesApiService from '../../services/places-api-service';
-import PlacesContext from '../../PlacesContext';
+import PlacesApiService from '../../services/places-api-service'
+import PlacesContext from '../../PlacesContext'
 import AddItem from '../AddItem/AddItem'
-import TokenService from '../../services/token-service';
-import MenuItem from '../MenuItem/MenuItem';
+import TokenService from '../../services/token-service'
+import MenuItem from '../MenuItem/MenuItem'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class AddPlace extends Component {
     static contextType = PlacesContext
@@ -206,13 +207,19 @@ class AddPlace extends Component {
                         Save
                     </button>
                 </form>
-                <Link 
+                {/* <Link 
                     to='/places'
                     className="go-back" 
                 >
                     Back
-                </Link>
+                </Link> */}
             </section>
+            <Link 
+                to='/places'
+                className="go-back" 
+            >
+                <FontAwesomeIcon icon="arrow-alt-circle-left" />
+            </Link>
             </>
         );
     }

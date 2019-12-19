@@ -1,4 +1,11 @@
 .remove-item {
-    color: black;
+    /* color: black; */
     margin-left: 5px;
+    background: none;
+    border: none;
+}
+
+.remove-item-icon {
+    color: white;
+    font-size: 16px;
 }

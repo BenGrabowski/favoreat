@@ -5,6 +5,7 @@ import PlacesContext from '../../PlacesContext'
 import PlacesApiService from '../../services/places-api-service'
 import TokenService from '../../services/token-service'
 import moment from 'moment'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class Place extends Component {
     static contextType = PlacesContext
@@ -87,15 +88,15 @@ class Place extends Component {
                 <div className="place-controls">
                     <Link
                         to={`/places/${this.props.id}/edit`}
-                        className="edit-delete"
+                        className="edit-icon"
                     >
-                        Edit
+                        <FontAwesomeIcon icon="edit" />
                     </Link>
-                    <button 
+                    <button
                         onClick={this.deletePlace}
-                        className="edit-delete"
+                        className="delete-button"
                     >
-                        Delete
+                        <FontAwesomeIcon icon="trash" className="delete-icon" />
                     </button>
                 </div>
             </section>

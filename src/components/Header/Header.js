@@ -55,13 +55,14 @@ class Header extends Component {
                 >
                     Register
                 </Link>
+                <a href="#demo" className="nav-link">Demo</a>
             </div>
         )
     }
     
     render() {
         return <>
-            <nav className='Header'>
+            <nav className='Header' role="navigation">
                 <Link 
                     to='/'
                     className='justify-start'
@@ -74,13 +75,6 @@ class Header extends Component {
                         : this.renderLoginLink()
                     }
                 </div>
-                {/* <Link 
-                    to='/places' 
-                    // id="demo-button"
-                    className="nav-link"
-                >
-                    Demo
-                </Link> */}
             </nav>
         </>
     }

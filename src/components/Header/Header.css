@@ -1,6 +1,6 @@
-* {
+/* * {
     color: white;
-}
+} */
 
 .Header {
     display: flex;
@@ -23,6 +23,7 @@
 
 a {
     text-decoration: none;
+    color: white;
 }
 
 .nav-link {

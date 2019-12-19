@@ -12,6 +12,10 @@ import EditPlace from '../../components/EditPlace/EditPlace';
 import { PlacesListProvider } from '../../PlacesContext';
 import NotFoundPage from '../../routes/NotFoundPage';
 import '../../index.css';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faArrowAltCircleLeft, faEdit, faTrash, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faArrowAltCircleLeft, faEdit, faTrash, faTimesCircle)
 
 class App extends Component {
   

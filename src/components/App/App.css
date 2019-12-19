@@ -10,7 +10,7 @@ html {
 body {
   height: inherit;
   font-size: 20px;
-  color: white;
+  /* color: white; */
   line-height: 1.5;
   background-size: cover;
 }
@@ -50,11 +50,10 @@ input, textarea {
 }
 
 .go-back {
-  color: rgb(1, 17, 58);
+  color: white;
   width: 75px;
-  height: 25px;
-  background: white;
-  font-size: 14px;
+  background: rgb(1, 17, 58);
+  font-size: 22px;
   text-align: center;
   margin: 10px auto;
   border: 1px solid white;
@@ -66,8 +65,8 @@ input, textarea {
 }
 
 .go-back:hover {
-  background: rgb(1, 17, 58);
-  color: white;
+  color: rgb(1, 17, 58);
+  background: white;
 }
 
 @media screen and (max-width: 400px) {
