@@ -1,15 +1,19 @@
 {
-    "version": 2,
-    "alias": "favoreat",
-    "name": "favoreat",
-    "routes": [
-        {
-          "src": "^/static/(.*)",
-          "dest": "/static/$1"
-        },
-        {
-          "src": ".*",
-          "dest": "/index.html"
-        }
-    ]
+  "version": 3,
+  "alias": "favoreat",
+  "name": "favoreat",
+  "routes": [
+      {
+        "src": "^/static/(.*)",
+        "dest": "/static/$1"
+      },
+      {
+        "src": ".*",
+        "dest": "/index.html"
+      },
+  {
+    "src": "/favicon.ico",
+    "dest": "/favicon.ico"
   }
+  ]
+}
