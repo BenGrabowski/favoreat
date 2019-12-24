@@ -27,11 +27,22 @@ class RegistrationForm extends Component {
             this.setState({ error: res.error })
         })
     }
+
+    renderInvalidMessage = () => {
+        return (
+            <p className="invalid-login">{this.state.error}</p>
+        )
+    }
     
     render() {
+        const { error } = this.state
+        
         return (
             <section id="registration">
                 <h3 className="login-header">Create an Account</h3>
+                
+                {(error) ? this.renderInvalidMessage() : null}
+
                 <form 
                     className='login-form'
                     onSubmit={this.handleSubmit}
