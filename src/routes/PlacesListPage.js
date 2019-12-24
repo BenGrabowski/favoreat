@@ -67,7 +67,7 @@ export default class PlacesListPage extends Component {
                 hh_end={place.hh_end}
                 rerenderList={this.rerenderList}
             />   
-        )
+        );
     }
 
     render() {

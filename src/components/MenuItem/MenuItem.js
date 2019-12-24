@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import './MenuItem.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React, { Component } from 'react';
+import './MenuItem.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class MenuItem extends Component {
     render() {

@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import './AddPlace.css'
-import PlacesApiService from '../../services/places-api-service'
-import PlacesContext from '../../PlacesContext'
-import AddItem from '../AddItem/AddItem'
-import TokenService from '../../services/token-service'
-import MenuItem from '../MenuItem/MenuItem'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import './AddPlace.css';
+import PlacesApiService from '../../services/places-api-service';
+import PlacesContext from '../../PlacesContext';
+import AddItem from '../AddItem/AddItem';
+import TokenService from '../../services/token-service';
+import MenuItem from '../MenuItem/MenuItem';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class AddPlace extends Component {
     static contextType = PlacesContext
@@ -23,11 +23,11 @@ class AddPlace extends Component {
     }
     
     componentDidMount() {
-        window.scrollTo(0, 0)
+        window.scrollTo(0, 0);
     }
     
     handleAddPlace = event => {
-        event.preventDefault()
+        event.preventDefault();
         const user_id = TokenService.getUserId()
         const { place_name, type, hh, hh_start, hh_end, notes, items } = this.state
         const { history } = this.props
@@ -47,8 +47,8 @@ class AddPlace extends Component {
     renderItemList = () => {
         const items = this.state.items.map((item, index) => {
             return <MenuItem itemName={item} index={index} key={index} removeItem={this.removeItem} />
-        }) 
-        return items
+        });
+        return items;
     }
 
     renderHhStartEnd = () => {

@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
-import RegistrationForm from '../components/RegistrationForm/RegistrationForm'
+import React, { Component } from 'react';
+import RegistrationForm from '../components/RegistrationForm/RegistrationForm';
 
 class RegistrationPage extends Component {
     static defaultProps = {
         history: {
-            push: () => {},
+            push: () => {}
         },
     }
 

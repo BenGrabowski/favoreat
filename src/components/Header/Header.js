@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import './Header.css'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import './Header.css';
 import TokenService from '../../services/token-service';
 import PlacesContext from '../../PlacesContext';
 

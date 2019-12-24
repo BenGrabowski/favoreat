@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import './ListControls.css'
+import React, { Component } from 'react';
+import './ListControls.css';
 
 class ListControls extends Component {
     render() {

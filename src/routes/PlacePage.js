@@ -1,22 +1,22 @@
-import React, { Component } from 'react'
-import PlacesContext from '../PlacesContext'
-import Place from '../components/Place/Place'
-import PlacesApiService from '../services/places-api-service'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React, { Component } from 'react';
+import PlacesContext from '../PlacesContext';
+import Place from '../components/Place/Place';
+import PlacesApiService from '../services/places-api-service';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class PlacePage extends Component {
     static contextType = PlacesContext
     
     componentDidMount() {
-        window.scrollTo(0, 0)
-        this.context.clearError()
+        window.scrollTo(0, 0);
+        this.context.clearError();
         PlacesApiService.getPlace(
             this.props.match.params.id,
             this.context.user_id
         )
             .then(place => this.context.setSelectedPlace(place))
             .then(this.context.setFetching(false))
-            .catch(this.context.setError)
+            .catch(this.context.setError);
     }
 
     renderNotFound = () => {

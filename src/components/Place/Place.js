@@ -1,17 +1,17 @@
-import React, { Component } from 'react'
-import { Link, withRouter } from 'react-router-dom'
-import './Place.css'
-import PlacesContext from '../../PlacesContext'
-import PlacesApiService from '../../services/places-api-service'
-import TokenService from '../../services/token-service'
-import moment from 'moment'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React, { Component } from 'react';
+import { Link, withRouter } from 'react-router-dom';
+import './Place.css';
+import PlacesContext from '../../PlacesContext';
+import PlacesApiService from '../../services/places-api-service';
+import TokenService from '../../services/token-service';
+import moment from 'moment';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class Place extends Component {
     static contextType = PlacesContext
 
     renderNotes() {
-        const notes = this.props.notes
+        const notes = this.props.notes;
         return (!notes) 
         ? '' 
         : <div className="notes-container">

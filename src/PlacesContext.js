@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
 import TokenService from './services/token-service';
 
 const PlacesContext = React.createContext({
@@ -15,8 +15,8 @@ const PlacesContext = React.createContext({
     setLoggedIn: () => {},
     setLoggedOut: () => {},
     clearError: () => {},
-})
-export default PlacesContext
+});
+export default PlacesContext;
 
 export class PlacesListProvider extends Component {
     state = {
@@ -50,21 +50,21 @@ export class PlacesListProvider extends Component {
     updatePlace = () => {}
 
     setLoggedIn = () => {
-        this.setState({ loggedIn: true })
-    }
+        this.setState({ loggedIn: true });
+    };
 
     setLoggedOut = () => {
-        this.setState({ loggedIn: false })
-    }
+        this.setState({ loggedIn: false });
+    };
 
     setError = error => {
-        console.error(error)
-        this.setState({ error })
-    }
+        console.error(error);
+        this.setState({ error });
+    };
 
     clearError = () => {
-        this.setState({ error: null })
-    }
+        this.setState({ error: null });
+    };
     
     render() {
         const contextValue = {
