@@ -1,5 +1,5 @@
-import config from '../config'
-import TokenService from '../services/token-service'
+import config from '../config';
+import TokenService from '../services/token-service';
 
 const PlacesApiService = {
     getPlaces(user_id) {
@@ -13,7 +13,7 @@ const PlacesApiService = {
             (!res.ok)
              ? res.json().then(e => Promise.reject(e))    
              : res.json()
-        )
+        );
     },
     getPlace(placeId, user_id) {
         return fetch(`${config.API_ENDPOINT}/places/${placeId}`, {
@@ -26,7 +26,7 @@ const PlacesApiService = {
             (!res.ok)
              ? res.json().then(e => Promise.reject(e))    
              : res.json()
-        )
+        );
     },
     postPlace(user_id, place_name, type, hh, hh_start, hh_end, notes, items) {
         return fetch(`${config.API_ENDPOINT}/places`, {
@@ -51,7 +51,7 @@ const PlacesApiService = {
             (!res.ok)
              ? res.json().then(e => Promise.reject(e))
              : res.json()
-        )
+        );
     },
     patchPlace(user_id, placeId, newPlace) {
         return fetch(`${config.API_ENDPOINT}/places/${placeId}`, {
@@ -63,7 +63,7 @@ const PlacesApiService = {
             },
             body: JSON.stringify(newPlace)
         })
-        .catch(error => console.log(error))
+        .catch(error => console.log(error));
     },
     deletePlace(user_id, placeId) {
         return fetch(`${config.API_ENDPOINT}/places/${placeId}`, {
@@ -74,8 +74,8 @@ const PlacesApiService = {
                 'user_id': user_id,
             }
         })
-        .catch(error => console.log(error))        
+        .catch(error => console.log(error)) ;       
     },
-}
+};
 
-export default PlacesApiService
+export default PlacesApiService;

@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
-import LoginForm from '../components/LoginForm/LoginForm'
-import PlacesContext from '../PlacesContext'
+import React, { Component } from 'react';
+import LoginForm from '../components/LoginForm/LoginForm';
+import PlacesContext from '../PlacesContext';
 
 export default class LoginPage extends Component {
   static defaultProps = {
     location: {},
     history: {
-      push: () => {},
+      push: () => {}
     },
   }
 

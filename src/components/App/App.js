@@ -5,7 +5,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import RegistrationPage from '../../routes/RegistrationPage';
 import './App.css';
 import LoginPage from '../../routes/LoginPage';
-import PlacesListPage from '../../routes/PlacesListPage'
+import PlacesListPage from '../../routes/PlacesListPage';
 import AddPlace from '../AddPlace/AddPlace';
 import PlacePage from '../../routes/PlacePage';
 import EditPlace from '../../components/EditPlace/EditPlace';
@@ -15,15 +15,15 @@ import '../../index.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faArrowAltCircleLeft, faEdit, faTrash, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faArrowAltCircleLeft, faEdit, faTrash, faTimesCircle)
+library.add(faArrowAltCircleLeft, faEdit, faTrash, faTimesCircle);
 
 class App extends Component {
   
   state = { hasError: false }
 
   static getDerivedStateFromError(error) {
-    console.error(error)
-    return { hasError: true }
+    console.error(error);
+    return { hasError: true };
   }
   
   render() {

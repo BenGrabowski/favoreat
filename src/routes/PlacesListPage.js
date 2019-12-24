@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import Place from '../components/Place/Place'
-import PlacesContext from '../PlacesContext'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import Place from '../components/Place/Place';
+import PlacesContext from '../PlacesContext';
 import PlacesApiService from '../services/places-api-service';
 import ListControls from '../components/ListControls/ListControls';
 import TokenService from '../services/token-service';
@@ -17,42 +17,42 @@ export default class PlacesListPage extends Component {
     }
     
     componentDidMount() {
-        this.context.clearError()
-        const user_id = TokenService.getUserId()
+        this.context.clearError();
+        const user_id = TokenService.getUserId();
         PlacesApiService.getPlaces(user_id)
             .then(res => {
-                    this.context.setPlaces(res)
+                    this.context.setPlaces(res);
                 }
             )
-            .catch(this.context.setError)
+            .catch(this.context.setError);
     }
 
     updateTypeFilter = event => {
         this.setState({
             sortType: event.target.value
-        })
+        });
     }
 
     updateHappyHour = checked => {
         this.setState({
             happyHour: checked
-        })
-    }
+        });
+    };
 
     renderPlaces() {
-        let places
+        let places;
         
         if (this.state.sortType === 'all') {
             if (!this.state.happyHour) {
-                places = this.context.places
+                places = this.context.places;
             } else {
-                places = this.context.places.filter(place => (place.hh === 'true'))
+                places = this.context.places.filter(place => (place.hh === 'true'));
             }
         } else {
             if (!this.state.happyHour) {
-                places = this.context.places.filter(place => place.type === this.state.sortType)
+                places = this.context.places.filter(place => place.type === this.state.sortType);
             } else {
-                places = this.context.places.filter(place => place.type === this.state.sortType && place.hh === 'true')                
+                places = this.context.places.filter(place => place.type === this.state.sortType && place.hh === 'true');               
             }
         }
 

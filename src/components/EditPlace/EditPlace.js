@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import PlacesContext from '../../PlacesContext'
-import PlacesApiService from '../../services/places-api-service'
-import AddItem from '../AddItem/AddItem'
-import TokenService from '../../services/token-service'
-import MenuItem from '../MenuItem/MenuItem'
-import './EditPlace.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import PlacesContext from '../../PlacesContext';
+import PlacesApiService from '../../services/places-api-service';
+import AddItem from '../AddItem/AddItem';
+import TokenService from '../../services/token-service';
+import MenuItem from '../MenuItem/MenuItem';
+import './EditPlace.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class EditPlace extends Component {
     state = {
@@ -23,15 +23,15 @@ class EditPlace extends Component {
     static contextType = PlacesContext
     
     componentDidMount() {
-        window.scrollTo(0, 0)
-        this.context.clearError()
+        window.scrollTo(0, 0);
+        this.context.clearError();
         PlacesApiService.getPlace(
             this.props.match.params.id,
             this.context.user_id
         )
             .then(place => {
-                this.context.setSelectedPlace(place)
-                return place
+                this.context.setSelectedPlace(place);
+                return place;
             })
             .then(place => {
                     this.setState({
@@ -42,15 +42,15 @@ class EditPlace extends Component {
                         hh_end: place.hh_end,
                         notes: place.notes,
                         items: place.items || []
-                    })
+                    });
                 }   
             )
-            .catch(this.context.setError)
+            .catch(this.context.setError);
     }
     
     handleEditPlace = event => {
         event.preventDefault()
-        const user_id = TokenService.getUserId()
+        const user_id = TokenService.getUserId();
         const placeId = this.props.match.params.id
         const { place_name, type, hh, hh_start, hh_end, notes, items } = this.state
         const { history } = this.props
@@ -78,17 +78,17 @@ class EditPlace extends Component {
     }
 
     removeItem = (event, index) => {
-        event.preventDefault()
-        const newItems = this.state.items.filter(item => item !== this.state.items[index])
+        event.preventDefault();
+        const newItems = this.state.items.filter(item => item !== this.state.items[index]);
         this.setState({
             items: newItems
-        })
-    }
+        });
+    };
 
     renderItemInput = event => {
-        event.preventDefault()
-        this.setState({ isAddingItem: true })
-    }
+        event.preventDefault();
+        this.setState({ isAddingItem: true });
+    };
 
     renderItemList = () => {
         const items = this.state.items.map((item, index) => {

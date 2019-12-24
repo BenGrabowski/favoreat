@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import './RegistrationForm.css'
+import React, { Component } from 'react';
+import './RegistrationForm.css';
 import AuthApiService from '../../services/auth-api-service';
 
 class RegistrationForm extends Component {
