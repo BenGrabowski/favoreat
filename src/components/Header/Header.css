@@ -70,7 +70,7 @@ h1 {
       margin: 10px;
   }
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 415px) {
     #demo-button {
         margin-top: 10px;
     }

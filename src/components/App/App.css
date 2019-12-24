@@ -69,7 +69,7 @@ input, textarea {
   background: white;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 415px) {
   .App_main {
     margin-top: 180px;
   }
